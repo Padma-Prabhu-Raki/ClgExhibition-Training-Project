@@ -1,0 +1,18 @@
+<!-- <app-toggle-sidenav></app-toggle-sidenav> -->
+<!-- <div class="loginpage"> -->
+    <form class="card" [formGroup]="formdata" (ngSubmit)="login(formdata.value)">
+        <h1 style="margin-left:120px; font-size:x-large"> Login </h1>
+        <div class="id">
+            <label for="userId" class="idtext"> User-ID: </label>  
+            &nbsp; &nbsp;&nbsp; &nbsp; <input type="any" class="idbox" name="userid" value="userID" formControlName="email">
+        </div>
+
+        <div class="password">
+            <label for="password" class="passtext"> Password: </label>
+           <input type="password" class="passbox" name="password" value="password" formControlName="password">
+        </div>
+
+        <button class="login" type="submit"> Login </button>
+    </form>
+<!-- </div>  -->
+

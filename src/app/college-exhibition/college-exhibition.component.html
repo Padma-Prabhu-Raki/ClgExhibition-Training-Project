@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+
+
+<!-- --------------------------------------- 17/11/2022 --------------------------------------------- -->
+<h1 style="text-align:center"> College Exhibition </h1>
+
+<form [formGroup]="clgExhibition" (ngSubmit)="submit(clgExhibition)">
+    <label for="reg_no"> Enter you Reg. No. </label>
+    <input type="number" placeholder="Enter your Reg. No." formControlName="reg_no">
+    <span *ngIf="clgExhibition.controls['reg_no'].errors?.required"> Registration Number is compulsory</span>
+    <br><br>
+    <label for="Name"> Candidate Name: </label>
+    <input type="text" placeholder="Enter your Name" formControlName="Name">
+    <span *ngIf="clgExhibition.controls['Name'].errors?.required"> Name should be only in letters </span>
+    <br><br>
+    <label for="dept"> Dept./Class </label>
+    <input type="text" placeholder="Eg., ECE/CSE" formControlName="dept">
+    <br><br>
+    <label for="topic"> Enter your Topic of Execution: </label>
+    <input type="text" placeholder="Enter your Topic of Execution" formControlName="topic">
+    <br><br>
+    <label for="duration"> Enter the duration of your task:(in min) </label>
+    <input type="number" placeholder="Enter the Duration  of your Task" formControlName="duration">
+    <span *ngIf="clgExhibition.controls['duration'].errors?.required"> Maximumduration is 10 mins </span>
+    <br><br>
+    <button [disabled]="clgExhibition.invalid"> submit </button>
+</form>

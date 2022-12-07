@@ -1,0 +1,83 @@
+.main{
+    background-color: aquamarine;
+}
+
+.header{
+    display:flex;
+    justify-content: center;
+}
+.comp_name{
+    text-align: center;
+    font-weight: 400;
+    font-size: 45px;
+    color:rgb(0, 21, 255);
+    margin-top: 50px;
+    margin-left: 100px;
+}
+h1{
+    text-align: center;
+    font-weight: 400;
+    font-size: xx-large;
+    /* margin-top: 50px;
+    margin-left: 150px; */
+}
+
+.logo{
+    padding: 50px;
+    
+}
+
+/* .containerarea{
+    width:350px;
+    height: 150px;
+} */
+
+.searchbutton{
+    margin-left:20px;
+    width:5%
+}
+
+.mit{
+    border: 2px solid;
+    border-color: blueviolet;
+    border-radius: 50%;
+    margin-left: 100px;
+    height: 130px;
+}
+
+.row{
+    display:flex;
+    /* justify-content: center; */
+}
+
+
+button{
+    width: 200px;
+    Height : 40px;
+    /* margin-left: 900px;
+    margin-bottom: 5px; */
+    float:right;
+    margin-left: 100px;
+    border: 2px groove;
+}
+
+/* .add-btn{
+    margin-left:30px;
+} */
+.add-btn:hover{
+    background-color: aliceblue;
+    border-color: brown;
+}
+
+.det-btn{
+    border-radius: 50%;
+    width:60px;
+    height:60px;
+    margin-bottom: 5px;
+    /* padding-bottom: 15px; */
+    background-color: rgb(153, 226, 43);
+    text-align: center;
+    font-size: large;
+    border: 2px groove;
+}
+

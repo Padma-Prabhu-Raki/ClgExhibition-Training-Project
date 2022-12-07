@@ -1,0 +1,21 @@
+<!-- <p>toggle-sidenav works!</p> -->
+
+<div class="header">
+    <!-- <h1 style="font-size: 40px; padding-top: 5px;"> Muraai Infotech Pvt. Ltd., </h1> -->
+    <div class="content">
+      <button mat-button style="margin-left:10px; border:1px dotted" (click)="drawer.toggle()">
+         Menu 
+      </button>
+    </div> 
+</div>
+<div>
+    <mat-drawer-container class="containerarea" autosize>
+        <mat-drawer #drawer class="sidebox" mode="side">
+          <button (click)="sidenavhome()" mat-button>
+            Home
+          </button>
+        </mat-drawer>
+        <app-loginpage></app-loginpage>
+    </mat-drawer-container>
+    
+</div>

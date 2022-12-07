@@ -1,0 +1,41 @@
+<div class="add-new">
+    <h1 style="text-align:center"> Edit Student Details </h1>
+    <form [formGroup]="formdata" (ngSubmit)="save(formdata.value)">
+        <div class="form-group">
+            <label for="id"> Position: </label>
+            <input matInput type="number" name="id" class="form-control" formControlName="id">
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <label for="name"> Enter your Name: </label>
+            <input matInput type="text" name="name" class="form-control" formControlName="name">
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <label for="reg_no"> Enter your Reg.Number: </label><br>
+            <input matInput type="text" name="reg_no" class="form-control" formControlName="reg_no">
+        </div>
+        <!-- <div *ngIf="formdata.controls['reg_no'].invalid && (formdata.controls['reg_no'].dirty || formdata.controls['reg_no']"></div> -->
+        <div style="margin-left:10px" *ngIf="formdata.controls['reg_no'].errors?. required">
+            Registration Number is Required
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <label for="dept"> Dept.: </label>
+            <input matInput type="text" name="dept" class="form-control" formControlName="dept">
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <label for="topic"> Topic of Execution: </label>
+            <input matInput type="text" name="topic" class="form-control" formControlName="topic">
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <label for="duration"> Time Duration(in min.) : </label>
+            <input matInput type="number" name="duration" class="form-control" formControlName="duration">
+        </div><br>
+        <pre></pre>
+        <button class="btn_btn-primary" type="submit" [disabled]="formdata.invalid"> Save Details </button>
+    </form>
+</div>
+

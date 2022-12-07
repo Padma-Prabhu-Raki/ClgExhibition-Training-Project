@@ -1,0 +1,25 @@
+<!-- <app-headerdashboard></app-headerdashboard> -->
+<!-- <head> -->
+    <h1 style="text-align: center; margin-top: 10px; font-size: 30px; font-weight: 400;"> Welcome to our College Site <mat-icon fontIcon="school"></mat-icon></h1><br>
+     <!-- <h1 style="font-weight:500; font-size: xx-large; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-style: italic; margin-left: 400px;"> 
+        Grand National Level Exhibition
+    </h1><br>  -->
+<!-- </head><br> -->
+<div class="row row-cols-1  row-cols-md-3">
+    <div class="col-mb-4"   *ngFor="let card of cardDetails">
+        <mat-card class="card">
+            <mat-card-header class="header">
+                <mat-card-title style="text-align:center;"> {{card.title}} </mat-card-title>
+                <mat-card-subtitle style="margin-left:20px;"> <b>Location: </b> Muraai University, Bengaluru-560068. </mat-card-subtitle>
+            </mat-card-header>
+            <div mat-card-avatar class="image">
+                <img class="image" src="{{card.image}}">
+            </div><br><br><br>
+            
+            <mat-card-content>
+                <p style="text-align: center; font-weight:300px;"> Events: <strong> {{card.topic}} </strong> </p>  <br>
+                <p> <b> Description:</b> {{card.description}} </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

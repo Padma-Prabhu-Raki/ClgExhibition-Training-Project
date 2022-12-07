@@ -1,0 +1,229 @@
+<h1 style="text-align:center" *ngIf="!data?.editHeading"> New Student Registration </h1>
+<h1 style="text-align:center; font-size: x-large; margin-top: 15px;" *ngIf="data?.editHeading"> Edit Students Details
+</h1>
+<mat-stepper orientation="horizontal" #stepper>
+    <mat-step [stepControl]="formGroup1">
+        <form [formGroup]="formGroup1" (ngSubmit)="form1()" #formone="ngForm">
+            <ng-template matStepLabel> Personal Details </ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label> S.No </mat-label>
+                <input matInput type="number" name="id" class="form-control" formControlName="id">
+            </mat-form-field><br><br>
+            <mat-form-field appearance="fill">
+                <mat-label> Full Name: </mat-label>
+                <input matInput type="text" placeholder="" name="name" class="form-control" formControlName="name"
+                    required>
+                <mat-icon matSuffix>happy_satisfied</mat-icon>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext> Next </button>
+                <!-- <button mat-button type="submit"> Submit </button> -->
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="formGroup2" label="Contact Details">
+        <form [formGroup]="formGroup2" (ngSubmit)="form2()" #formtwo="ngForm">
+            <mat-form-field appearance="fill">
+                <mat-label> E-mail ID: </mat-label>
+                <input matInput type="any" placeholder="Enter your E-mail-id" name="email" class="form-control"
+                    formControlName="email" required>
+                <mat-icon matSuffix> sentiment_very_satisfied </mat-icon>
+            </mat-form-field><br><br>
+            <mat-form-field appearance="fill">
+                <mat-label> Mobile No.: </mat-label>
+                <input matInput type="any" placeholder="Enter your Mobile No." name="mobile" class="form-control"
+                    formControlName="mobile" required>
+                <mat-icon matSuffix> sentiment_very_satisfied </mat-icon>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious> Back </button>
+                <button mat-button matStepperNext> Next </button>
+                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="formGroup3" label="Educational Details">
+        <form [formGroup]="formGroup3" (ngSubmit)="form3()" #formthree="ngForm">
+            <mat-form-field appearance="fill">
+                <mat-label> Reg. No.: </mat-label>
+                <input matInput type="number" name="reg_no" placeholder="" class="form-control" formControlName="reg_no"
+                    required>
+                <mat-icon matSuffix> happy-very_satisfied </mat-icon>
+            </mat-form-field><br>
+
+            <mat-form-field appearance="fill">
+                <mat-label> Department: </mat-label>
+                <input matInput type="text" name="dept" placeholder="" class="form-control" formControlName="dept">
+                <mat-icon matSuffix> sentiment_satisfied </mat-icon>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious> Back </button>
+                <button mat-button matStepperNext> Next </button>
+                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="formGroup4" label="Participation Details">
+        <form [formGroup]="formGroup4" (ngSubmit)="form4()" #formfour="ngForm">
+            <mat-form-field appearance="fill">
+                <mat-label> Topic of Execution: </mat-label>
+                <input matInput type="text" name="topic" placeholder="" class="form-control" formControlName="topic">
+            </mat-form-field><br>
+            <mat-form-field appearance="fill">
+                <mat-label> Duration(in min): </mat-label>
+                <input matInput type="number" name="duration" placeholder="" class="form-control"
+                    formControlName="duration" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious> Back </button>
+                <button mat-button matStepperNext> Next </button>
+                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="formGroup5" label="Residential Details">
+        <form [formGroup]="formGroup5" (ngSubmit)="form5()" #formfive="ngForm">
+            <mat-form-field appearance="fill">
+                <mat-label> Address Line 1: </mat-label>
+                <input matInput type="any" name="address" placeholder="" class="form-control"
+                    formControlName="address1">
+                <mat-icon fontIcon="home" matIconSuffix></mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label> Address Line 2 : </mat-label>
+                <input matInput type="any" name="address" placeholder="" class="form-control"
+                    formControlName="address2">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious> Back </button>
+                <button mat-button matStepperNext> Next </button>
+                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="formGroup6" label="country-state">
+        <!--   <div class="display-container">
+             <h2 *ngIf="countryname">
+              Country: {{ countryname.name }}
+              <span (click)="clear('country')"> Clear </span>
+            </h2>
+            <h2 *ngIf="statename">
+              State: {{ statename.name }}
+              <span (click)="clear('state')"> Clear </span>
+            </h2>
+            <h2 *ngIf="cityname">
+              City: {{ cityname.name }} 
+              <span (click)="clear('city')"></span>
+            </h2>
+        </div> -->
+        <form [formGroup]="formGroup6" (ngSubmit)="form6()" #formsix="ngForm">
+            <mat-form-field appearance="fill">
+                <div class="form-group">
+                    <mat-label> Country: </mat-label>
+                    <mat-select class="form-control" [formControl]="country" name="country">
+                        <mat-option *ngFor="let country of countries" [value]="country">
+                            {{ country.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="country.hasError('required')">
+                        Please select a country.
+                    </mat-error>
+                </div>
+            </mat-form-field>
+            <button mat-stroked-button class="btn" (click)="country.reset()"> Clear </button>
+            <p></p> <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label> State: </mat-label>
+                <div class="form-group">
+                    <mat-select class="form-control" [formControl]="state" name="state">
+                        <!-- <option value=""> Select state ... </option> -->
+                        <mat-option *ngFor="let state of states" [value]="state">
+                            {{ state.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="state.hasError('required')"> Please select a state. </mat-error> -->
+                    <!-- <label for="state"> State: </label><br /><br>
+                    <mat-select *ngIf="states" #state name="state" id="state"
+                        (change)="onStateChange($event)">
+                      <mat-option [value]="null"> -- Select Your State -- </mat-option>
+                      <mat-option *ngFor="let state of states" [value]="state | json">
+                        {{ state.name }}
+                      </mat-option>
+                    </mat-select> -->
+                </div>
+            </mat-form-field>
+            <button mat-stroked-button class="btn" (click)="state.reset()"> Clear </button>
+            <p></p><br>
+
+            <!-- <mat-form-field appearance="fill">
+                 <mat-label> City </mat-label>
+                <div class="form-group">
+                    <mat-select name="city" formControlName="city" class="form-control">
+                         <option value=""> Select city ... </option> 
+
+                        <mat-option *ngFor="let city of City" [value]="city">
+                            {{ city.name }}
+                        </mat-option>
+                    </mat-select>
+                </div>    
+                <mat-error *ngIf="city.hasError('required')"> Please select a city. </mat-error>
+            </mat-form-field>
+            <button mat-stroked-button class="btn" (click)="city.reset()"> Clear </button> -->
+
+            <!-- <label for="city"> City: </label><br /><br />
+            <mat-select *ngIf="cities" #city name="city" id="city"
+                (change)="onCityChange($event)" >
+                <mat-option [value]="null">-- Select Your City --</mat-option>
+                <mat-option *ngFor="let cityname of cities" [value]="cityname | json">
+                    {{ city.name }}
+                </mat-option>
+            </mat-select> -->
+
+            <div>
+                <button mat-button matStepperPrevious> Back </button>
+                <button mat-button matStepperNext> Next </button>
+                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="formGroup7" label="Select your Gender">
+        <form [formGroup]="formGroup7" (ngSubmit)="form7()" #formseven="ngForm">
+            <!-- <mat-form-field appearance="fill" name="gender"> -->
+            <mat-label> Select your Gender: </mat-label><br>
+            <mat-radio-group>
+                <mat-radio-button class="malebutton" value="1"> MALE </mat-radio-button>
+                <mat-radio-button class="femaleradio" value="2"> FEMALE </mat-radio-button>
+            </mat-radio-group>
+            <!-- </mat-form-field> -->
+            <div>
+                <button mat-button matStepperPrevious> Back </button>
+                <button mat-button matStepperNext> Next </button>
+                <button mat-stroked-button *ngIf="!data?.showEdit" class="btn_btn-primary" type="submit" (click)="snackbar()" [disabled]="formGroup7.invalid"> Submit </button>
+                <button  mat-stroked-button *ngIf="data?.showEdit" class="btn_btn-primary" (click)="updatefn()" (click)="updatesnackbar()"> Update </button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel> Done </ng-template>
+        <p> You are now completed your registration process with above details. </p>
+        <div>
+            <button mat-button matStepperPrevious> Back </button>
+            <button mat-button style="margin-left:5px;" (click)="stepper.reset()"> Reset </button>
+            <!--<button (click)="formone.ngSubmit.emit(); formtwo.ngSubmit.emit(); formthree.ngSubmit.emit();
+                formfour.ngSubmit.emit(); formfive.ngSubmit.emit(); formfive.ngSubmit.emit();
+                formsix.ngSubmit.emit(); formseven.ngSubmit.emit();" 
+                mat-stroked-button  style="margin-left:5px;" *ngIf="!data?.showEdit" 
+                class="btn_btn-primary" (click)="snackbar()" 
+                > Submit </button>
+            <button  mat-stroked-button  style="margin-left:5px;" *ngIf="data?.showEdit" 
+                     ngIfclass="btn_btn-primary" (click)="updatefn(formGroup7.value)" 
+                    (click)="updatesnackbar()"> Update 
+            </button>
+             <button style="margin-left:5px;"  *ngIf="data?.showcancel" (click)="cancel()" > Cancel </button> -->
+        </div>
+    </mat-step>
+</mat-stepper>

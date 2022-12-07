@@ -1,0 +1,70 @@
+<!-- <app-headerdashboard></app-headerdashboard> -->
+<mat-card>
+    <mat-card-header class="matHeader">
+         <mat-card-title style="font-size:xx-large;">  Muraai InfoTech Pvt. Ltd., </mat-card-title>
+         <mat-card-subtitle> 10 Years Completion Anniversary </mat-card-subtitle> 
+    </mat-card-header>
+    <br><br>
+    <div class="content">
+        <img mat-card-image class="image" src="http://muraai.com/wp-content/uploads/2019/12/new.png">
+
+        <app-compinteractdetails [Studentdetails]="Studentdetails"
+                                (editEvent)="editclick($event)"   
+                                (deleteEvent)="deleteclick($event)">
+        </app-compinteractdetails>
+
+        <!-- <h1> Edit : {{alertMessage1}} </h1> -->
+        <!-- <app-compinteractdetails (editEvent)="editclick(Studentdetails)"   
+                                (deleteEvent)="deleteclick(Studentdetails)">
+        </app-compinteractdetails> -->
+
+        <!-- <h1> Delete : {{alertMessage2}} </h1>
+        <app-compinteractdetails (deleteEvent)="deleteclick($event)"></app-compinteractdetails> -->
+    </div>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-headerdashboard></app-headerdashboard>
+<mat-card>
+    <mat-card-header class="matHeader">
+         <mat-card-title style="font-size:xx-large;">  Muraai InfoTech Pvt. Ltd., </mat-card-title>
+         <mat-card-subtitle> 10 Years Completion Anniversary </mat-card-subtitle> 
+    </mat-card-header>
+    <br><br>
+    <div class="content">
+        <img mat-card-image class="image" src="http://muraai.com/wp-content/uploads/2019/12/new.png">
+        <mat-card-content class="details">
+            <h1 style="font-weight:400; font-size:xx-large"> Details of the Participator </h1>
+            <h3> <b> Id: </b> {{StudentDetails.id}} </h3>
+            <h3> <b> Name: </b> {{StudentDetails.name}} </h3>
+            <h3> <b> Reg.No.: </b> {{StudentDetails.reg_no}} </h3>
+            <h3> <b> Dept.: </b> {{StudentDetails.dept}} </h3>
+            <h3> <b> Topic of Execution: </b> {{StudentDetails.topic}} </h3>
+            <h3> <b> Duration(in min.): </b> {{StudentDetails.duration}} </h3>
+        </mat-card-content>
+    </div>
+</mat-card> -->

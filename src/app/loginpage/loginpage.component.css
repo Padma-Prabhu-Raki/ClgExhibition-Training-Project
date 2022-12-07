@@ -1,0 +1,40 @@
+.card{
+    margin-top:200px;
+    margin-left:700px;
+    width:500px;
+    height:200px;
+}
+
+.idtext{
+    margin-left: 20px;
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.idbox{
+    width:200px;
+    height: 25px;
+    margin-top:20px;
+    margin-left: 10px;
+}
+
+.passbox{
+    width:200px;
+    height:25px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.passtext{
+    font-size: x-large;
+    font-weight: 400;
+    margin-left:20px;
+    font-weight: 400;
+}
+
+button{
+    margin-left:50px;
+    width:150px;
+    height: 50px;
+    margin-top:30px;
+}

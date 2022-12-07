@@ -1,0 +1,15 @@
+
+
+/* .dashboardarea{
+    display: flex;
+} */
+
+.containerarea{
+    width:2180px;
+    height:650px;
+}
+
+.content{
+    display: flex;
+    /* height:100% */ 
+}

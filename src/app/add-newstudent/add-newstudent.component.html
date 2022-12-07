@@ -1,0 +1,72 @@
+<div class="add-new">
+    <h1 style="text-align:center" *ngIf="!data?.editHeading"> New Student Registration </h1>
+    <h1 style="text-align:center; font-size: x-large; margin-top: 15px;" *ngIf="data?.editHeading"> Edit Students Details </h1>
+    <form [formGroup]="formdata" (ngSubmit)="submit(formdata.value)">
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label for="id"> Position: </mat-label>
+                <input matInput type="number" name="id" class="form-control" formControlName="id">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <label> Name: </label>
+            <mat-form-field appearance="fill">
+                <mat-label for="name"> Enter your Name: </mat-label>
+                <input matInput type="text" name="name" class="form-control" formControlName="name">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <mat-form-field appearance="fill">
+                <mat-label for="reg_no"> Enter your Reg.Number: </mat-label>
+                <input matInput type="text" name="reg_no" class="form-control" formControlName="reg_no">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+        <!-- <div *ngIf="formdata.controls['reg_no'].invalid && (formdata.controls['reg_no'].dirty || formdata.controls['reg_no']"></div> -->
+        <div style="margin-left:10px" *ngIf="formdata.controls['reg_no'].errors?. required">
+            Registration Number is Required
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label for="dept"> Dept.: </mat-label>
+                <input matInput type="text" name="dept" class="form-control" formControlName="dept">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label for="topic"> Topic of Execution: </mat-label>
+                <input matInput type="text" name="topic" class="form-control" formControlName="topic">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div><br>
+        <pre></pre>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label for="duration"> Time Duration(in min.) : </mat-label>
+                <input matInput type="number" name="duration" class="form-control" formControlName="duration">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div><br>
+        <pre></pre>
+            <button mat-stroked-button *ngIf="!data?.showEdit" class="btn_btn-primary" type="submit" (click)="snackbar()" [disabled]="formdata.invalid"> Submit </button>
+            <button  mat-stroked-button *ngIf="data?.showEdit" class="btn_btn-primary" (click)="updatefn(formdata.value)" (click)="updatesnackbar()"> Update </button>
+            <button type="button"  style="margin-left:5px;"  (click)="cancel()" > Cancel </button>
+    </form>
+</div>                            /* done on 23-11-2022 */
+
+<!-- <div class="edit">
+    <h1 style="font-weight:400; font-size:xx-large"> Edit Details of the Participator </h1>
+            <h3> <b> Id: </b> {{editDetails?.id}} </h3>
+            <h3> <b> Name: </b> {{editDetails?.name}} </h3>
+            <h3> <b> Reg.No.: </b> {{editDetails?.reg_no}} </h3>
+            <h3> <b> Dept.: </b> {{editDetails?.dept}} </h3>
+            <h3> <b> Topic of Execution: </b> {{editDetails?.topic}} </h3>
+            <h3> <b> Duration(in min.): </b> {{editDetails?.duration}} </h3>
+</div> -->

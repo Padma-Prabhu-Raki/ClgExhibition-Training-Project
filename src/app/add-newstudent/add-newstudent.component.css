@@ -1,0 +1,18 @@
+div.add-new{
+    width: 600px;
+    font-size: large;
+    /* font-weight: 400; */
+    background-color: bisque;
+}
+div.form-group{
+    margin-left:10px;
+}
+.btn_btn-primary{
+    margin: 5px;
+    margin-left: 225px;
+}
+
+.form-control:hover{
+    height:15px;
+    /* background-color:aqua; */
+}

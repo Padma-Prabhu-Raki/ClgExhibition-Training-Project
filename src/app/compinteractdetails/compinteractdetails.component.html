@@ -1,0 +1,16 @@
+<!-- <p>compinteractdetails works!</p> -->
+
+<div class="details">
+    <h1 style="font-weight:400; font-size:xx-large"> Details of the Participator </h1>
+            <h3> <b> Id: </b> {{Studentdetails?.id}} </h3>
+            <h3> <b> Name: </b> {{Studentdetails?.name}} </h3>
+            <h3> <b> Email-ID: </b> {{Studentdetails?.email}} </h3>
+            <h3> <b> Mob. No.: </b> {{Studentdetails?.mobile}} </h3>
+            <h3> <b> Reg.No.: </b> {{Studentdetails?.reg_no}} </h3>
+            <h3> <b> Dept.: </b> {{Studentdetails?.dept}} </h3>
+            <h3> <b> Topic of Execution: </b> {{Studentdetails?.topic}} </h3>
+            <h3> <b> Duration(in min.): </b> {{Studentdetails?.duration}} </h3>
+
+        <button (click)="editchild()"> Edit </button>
+        <button (click)="deletechild()" style="margin-left: 15px;"> Delete </button>
+</div>

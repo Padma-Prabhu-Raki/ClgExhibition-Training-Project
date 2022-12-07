@@ -1,0 +1,21 @@
+.matHeader{
+    text-align: center;
+    /* margin-left: 350px; */
+}
+
+
+.image{
+    width: 300px;
+    height: 250px;
+    margin-left: 50px;
+    border: 2px outset;
+}
+
+.content{
+    display: flex;
+}
+
+.details{
+    float:right;
+    margin-left: 250px;
+}
