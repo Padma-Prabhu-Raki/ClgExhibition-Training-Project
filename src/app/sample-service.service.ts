@@ -14,9 +14,9 @@ import * as countrycitystatejson from 'country-state-city';
 })
 export class SampleServiceService {
 
-  fromService='This is from Service'
-  private message = new BehaviorSubject<string>('default message');
-  getMessage = this.message.asObservable();
+  // fromService='This is from Service'
+  // private message = new BehaviorSubject<string>('default message');
+  // getMessage = this.message.asObservable();
 
   private dataSubject$ = new Subject<any>();
   dataEvent$ = this.dataSubject$.asObservable();
@@ -32,10 +32,10 @@ export class SampleServiceService {
 
   constructor(private http: HttpClient) { }
 
-  updateMessage(msg: string) {
-    console.log('----msg---', msg)
-    this.message.next(msg);
-  }
+  // updateMessage(msg: string) {
+  //   console.log('----msg---', msg)
+  //   this.message.next(msg);
+  // }
 
   // getELEMENT_DATA(){
   //   return this.http.get(this.API_URL)
@@ -50,13 +50,13 @@ export class SampleServiceService {
   
   
   createELEMENT_DATA(data : any): Observable<any> {
-    console.log('---data----', data)
+    // console.log('---data----', data)
     return this.http.post(`${this.API_URL}`,data);
   }
 
 
   deleteELEMENT_DATA(id: any) : Observable<any> {
-    console.log(id)
+    // console.log(id)
     return this.http.delete(`${this.API_URL}/${id}`);
 
     // return this.http.delete('http://localhost:3000/clgExhibition/1');
@@ -71,7 +71,7 @@ export class SampleServiceService {
   }
 
   loginpageurl(data: any) : Observable<any> {
-    console.log('------', data)
+    // console.log('------', data)
     return this.http.post(`${this.login_URL}`, data) 
   }
 

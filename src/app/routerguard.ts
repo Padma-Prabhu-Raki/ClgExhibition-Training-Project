@@ -3,9 +3,9 @@ import { Observable } from "rxjs";
 
 export class Routerguard implements CanActivate{
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        let a=localStorage.getItem('loginSuccessful') ?? ''
-        console.log(a)
-        return JSON.parse(a)
+        let checkingLogin = localStorage.getItem('loginSuccessful') ?? ''
+        // console.log(checkingLogin)
+        return JSON.parse(checkingLogin)
         
         
         
