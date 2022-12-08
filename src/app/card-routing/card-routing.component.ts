@@ -40,6 +40,7 @@ export class CardRoutingComponent implements OnInit{
     this.service.deleteELEMENT_DATA(Studentdetails.id).subscribe(deleteStudent => {
       this.router.navigate(['jsondashboard'])
       console.log("------",deleteStudent)
+      // console.log("--------",deleteStudent)
     });
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
+import { Observable, of, map } from 'rxjs';
 import { SampleServiceService } from '../sample-service.service';
 
 @Component({
@@ -12,15 +13,79 @@ export class CardsTopicsexhibitionsComponent implements OnInit{
 
  cardDetails : any;
 
- constructor(private service: SampleServiceService){}
+ constructor(private service: SampleServiceService, private route:Router){}
 
 
- ngOnInit(): void {
-   this.service.getCardTitle().subscribe(getCardDetaislFromService  =>{
-    this.cardDetails = getCardDetaislFromService
-    // console.log('----', getCardDetaislFromService)
-   })
- }
+//  ngOnInit(): void {
+//    this.service.getCardDetails().subscribe( getCardDetailsFromService =>{
+//     this.cardDetails = getCardDetailsFromService
+//     // console.log('----', getCardDetailsFromService)
+//    })
+//  }
+
+ngOnInit(): void {
+  if(this.route.url.includes('cards-exhibitions')){
+    this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
+      return cardData.filter((cardDomain:any) => {
+      if(cardDomain.domain === "Conference"){
+        return cardData;
+      }
+      else if(cardDomain.domain === "Hardware"){
+        return;
+      }
+      else if(cardDomain.domain === "General and Political Science"){
+        return;
+      }
+      else if(cardDomain.domain === "Software"){
+        return;
+      }
+      else if(cardDomain.domain === "Non-academic"){
+        return;
+      }
+      else if(cardDomain.domain === "Space-Science"){
+        return;
+      }
+      })
+    }))
+  } 
+}
+
+  // if(this.route.url.includes('Hardware')){
+  //   this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
+  //     return cardData.filter((cardDomain:any) => (cardDomain.domain === "Hardware"))
+  //   }))
+  // }
+  // if(this.route.url.includes('General-and-Political-Science')){
+  //   this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
+  //     return cardData.filter((cardDomain:any) => (cardDomain.domain === "General and Political Science"))
+  //   }))
+  // }
+  // if(this.route.url.includes('Software')){
+  //   this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
+  //     return cardData.filter((cardDomain:any) => (cardDomain.domain === "Software"))
+  //   }))
+  // }
+  // if(this.route.url.includes('Non-academic')){
+  //   this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
+  //     return cardData.filter((cardDomain:any) => (cardDomain.domain === "Non-academic"))
+  //   }))
+  // }
+  // if(this.route.url.includes('Space-Science')){
+  //   this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
+  //     return cardData.filter((cardDomain:any) => (cardDomain.domain === "Space-Science"))
+  //   }))
+  // }
+
+
+
+
+
+
+
+
+
+
+
   // cards=[
   //   {
   //     title : 'CodingFest',

@@ -34,6 +34,7 @@ export class SampleServiceService {
 
   // updateMessage(msg: string) {
   //   console.log('----msg---', msg)
+  //   // console.log('----msg---', msg)
   //   this.message.next(msg);
   // }
 
@@ -75,7 +76,7 @@ export class SampleServiceService {
     return this.http.post(`${this.login_URL}`, data) 
   }
 
-  getCardTitle(){
+  getCardDetails(){
     return this.http.get(`${this.API_URL2}`)
   }
 

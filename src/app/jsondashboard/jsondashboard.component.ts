@@ -30,13 +30,11 @@ export class JsondashboardComponent implements OnInit{
     this.service.getELEMENT_DATA()
     // this.service.getStudents()
     if(this.route.url.includes('jsondashboard')) {
-      this.dataSource = this.service.dataEvent$
+      this.dataSource = this.service.dataEvent$ 
     }
     else {
-      this.dataSource = this.service.dataEvent$.pipe(map((data:any) => {
-        // console.log('----',data)
-  
-        return (data.filter((wish:any) => wish.wishness))
+      this.dataSource = this.service.dataEvent$.pipe(map((interestedData:any) => {
+        return (interestedData.filter((wish:any) => wish.wishness))
       }))
     }
 
@@ -57,11 +55,6 @@ export class JsondashboardComponent implements OnInit{
   wishlist(data:any){
     // this.dataSource.pipe(filter((wish) => wish.wishness === true)) 
     this.route.navigate(['wishlist'])
-    // this.dataSource = this.service.getELEMENT_DATA().pipe(map((n:any) => {
-    //   console.log('----',n)
-
-    //   return (n.filter((wish:any) => wish.wishness))
-    // }))
   }
 
   logout(){
@@ -101,8 +94,8 @@ export class JsondashboardComponent implements OnInit{
 
   deleteRow(id:any){
     // console.log('---ele====', element)
-    this.service.deleteELEMENT_DATA(id).subscribe(deleteData => {
-      // console.log('------', deleteData)
+    this.service.deleteELEMENT_DATA(id).subscribe(deletedata => {
+      // console.log('------', deletedata)
     })
     window.location.reload();
   }
@@ -115,8 +108,7 @@ export class JsondashboardComponent implements OnInit{
   editfav(element:any){
     this.service.updatewish(element).subscribe(editwish => {
       window.location.reload();
-      // console.log('--d: --', editwish)
-      
+      // console.log('----', editwish)
     })
   }
 }

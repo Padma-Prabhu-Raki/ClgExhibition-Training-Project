@@ -35,7 +35,6 @@ export class LoginpageComponent{
     // console.log('----',data)
     this.service.loginpageurl(data).subscribe(loginData => {
       // console.log('-----',loginData)
-      // console.log('--------',(data['email']).split('@'))
       localStorage.setItem('loginSuccessful','true') 
       localStorage.setItem('email',(data.email))
       // console.log(localStorage.getItem('loginSuccessful'))

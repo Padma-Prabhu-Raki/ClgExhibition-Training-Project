@@ -16,16 +16,16 @@ export class EditdashboardComponent {
   constructor(private route:ActivatedRoute, private service:SampleServiceService){ }
 
   ngOnInit(){
-    this.service.getStudentDetails(this.route.snapshot.params['id']).subscribe(d => {
-      this.StudentDetails=d
-      console.log('---------',d)
+    this.service.getStudentDetails(this.route.snapshot.params['id']).subscribe(getStudentById => {
+      this.StudentDetails = getStudentById
+      // console.log('---------',getStudentById)
     })
   }
 
   save(data:any){
-    this.service.editELEMENT_DATA({ ...data, id:data['id']}).subscribe(d => {
+    this.service.editELEMENT_DATA({ ...data, id:data['id']}).subscribe(editStudent => {
       window.location.reload();
-      console.log("-------d-------", d)
+      // console.log("-------d-------", d)
     })
 }
 
