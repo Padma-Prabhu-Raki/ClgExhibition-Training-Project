@@ -16,9 +16,9 @@ export class CardsTopicsexhibitionsComponent implements OnInit{
 
 
  ngOnInit(): void {
-   this.service.getCardTitle().subscribe( d =>{
-    this.cardDetails = d
-    console.log('----', d)
+   this.service.getCardTitle().subscribe(getCardDetaislFromService  =>{
+    this.cardDetails = getCardDetaislFromService
+    // console.log('----', getCardDetaislFromService)
    })
  }
   // cards=[

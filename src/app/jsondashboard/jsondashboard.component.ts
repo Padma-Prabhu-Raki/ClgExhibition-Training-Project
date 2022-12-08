@@ -18,8 +18,6 @@ import { HeaderdashboardComponent } from '../headerdashboard/headerdashboard.com
 export class JsondashboardComponent implements OnInit{
   displayedColumns: string[] = ['id', 'name', 'email', 'mobile', 'reg_no', 'dept', 'topic', 'duration','menubar','wishness'];
   dataSource : Observable<any>= of([{}])
-
-  dataStudent: Observable<any> = of([{}])
   
   wishing:any;
 
@@ -28,28 +26,21 @@ export class JsondashboardComponent implements OnInit{
 
   ngOnInit(){
 
-    console.log('---url---',this.route.url)
+    // console.log('---url---',this.route.url)
     this.service.getELEMENT_DATA()
     // this.service.getStudents()
     if(this.route.url.includes('jsondashboard')) {
       this.dataSource = this.service.dataEvent$
     }
     else {
-      this.dataSource = this.service.dataEvent$.pipe(map((n:any) => {
-        console.log('----',n)
+      this.dataSource = this.service.dataEvent$.pipe(map((data:any) => {
+        // console.log('----',data)
   
-        return (n.filter((wish:any) => wish.wishness))
+        return (data.filter((wish:any) => wish.wishness))
       }))
     }
 
-    this.dataStudent = this.service.dataEvent$
-
-    
-
-
-
-
-
+    // this.dataStudent = this.service.dataEvent$
     // this.wishing = this.service.getELEMENT_DATA().pipe(filter((n:any) => n.wishness === true))
   }
 
@@ -64,7 +55,7 @@ export class JsondashboardComponent implements OnInit{
   }
   
   wishlist(data:any){
-    // this.dataSource.pipe(filter((wish) => wish.wishness === true))
+    // this.dataSource.pipe(filter((wish) => wish.wishness === true)) 
     this.route.navigate(['wishlist'])
     // this.dataSource = this.service.getELEMENT_DATA().pipe(map((n:any) => {
     //   console.log('----',n)
@@ -110,8 +101,8 @@ export class JsondashboardComponent implements OnInit{
 
   deleteRow(id:any){
     // console.log('---ele====', element)
-    this.service.deleteELEMENT_DATA(id).subscribe(x => {
-      console.log('------', x)
+    this.service.deleteELEMENT_DATA(id).subscribe(deleteData => {
+      // console.log('------', deleteData)
     })
     window.location.reload();
   }
@@ -122,9 +113,9 @@ export class JsondashboardComponent implements OnInit{
 
 
   editfav(element:any){
-    this.service.updatewish(element).subscribe(d => {
+    this.service.updatewish(element).subscribe(editwish => {
       window.location.reload();
-      console.log('--d: --', d)
+      // console.log('--d: --', editwish)
       
     })
   }

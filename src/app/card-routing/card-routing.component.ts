@@ -20,9 +20,9 @@ export class CardRoutingComponent implements OnInit{
 
   ngOnInit(){
     // console.log(this.route.snapshot.params)
-    this.service.getStudentDetails(this.route.snapshot.params['id']).subscribe(d => {
-      this.Studentdetails = d
-      console.log('---------',d)
+    this.service.getStudentDetails(this.route.snapshot.params['id']).subscribe(getStudentById => {
+      this.Studentdetails = getStudentById
+      // console.log('---------',getStudentById)
     })
   }
 
@@ -37,9 +37,9 @@ export class CardRoutingComponent implements OnInit{
   }
 
   deleteclick(Studentdetails:any){
-    this.service.deleteELEMENT_DATA(Studentdetails.id).subscribe(d => {
+    this.service.deleteELEMENT_DATA(Studentdetails.id).subscribe(deleteStudent => {
       this.router.navigate(['jsondashboard'])
-      console.log("------d-----",d)
+      console.log("------",deleteStudent)
     });
   }
 }
