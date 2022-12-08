@@ -37,6 +37,7 @@ import { Routerguard } from './routerguard';
 import { CardsTopicsexhibitionsComponent } from './cards-topicsexhibitions/cards-topicsexhibitions.component';
 import {MatListModule} from '@angular/material/list';
 import { SampleDirective } from './sample.directive';
+import {MatExpansionModule} from '@angular/material/expansion'
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { SampleDirective } from './sample.directive';
     CompinteractdetailsComponent,
     StepperSelectorComponent,
     CardsTopicsexhibitionsComponent,
-    SampleDirective,
+    SampleDirective
   ],
   imports: [
     BrowserModule,
@@ -76,7 +77,8 @@ import { SampleDirective } from './sample.directive';
     MatSelectModule,
     MatRadioModule,
     MatPaginatorModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [
     Routerguard,

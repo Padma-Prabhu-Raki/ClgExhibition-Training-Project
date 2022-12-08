@@ -32,19 +32,19 @@ export class AddNewstudentComponent implements OnInit{
   }
 
   submit(data:any){
-    this.service.createELEMENT_DATA({ ...data, id:data['id']}).subscribe(d => {
+    this.service.createELEMENT_DATA({ ...data, id:data['id']}).subscribe(createStudentData => {
       // window.location.reload();
-      console.log("---d--", d)
+      // console.log("-----", createStudentData)
     });
 
     this.dialog.closeAll();
-    console.log("---",data)
+    // console.log("---",data)
   }
 
   updatefn(editData:any){
-    this.service.editELEMENT_DATA(editData).subscribe(d => {
+    this.service.editELEMENT_DATA(editData).subscribe(editStudentData => {
       window.location.reload();
-      console.log("---d---",d)
+      // console.log("---d---",editStudentData)
     });
   }
 

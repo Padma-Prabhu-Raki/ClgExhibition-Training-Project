@@ -30,10 +30,10 @@ export class StepperSelectorComponent implements OnInit{
       state : this.state
     })
 
-    this.country.valueChanges.subscribe((d:any) => {
-      this.states = State.getStatesOfCountry(d.isoCode)
-      console.log('----',d)
-      console.log('-----', this.states)
+    this.country.valueChanges.subscribe((countryName:any) => {
+      this.states = State.getStatesOfCountry(countryName.isoCode)
+      // console.log('----',countryName)
+      // console.log('-----', this.states)
     })
   }
 
@@ -90,22 +90,22 @@ export class StepperSelectorComponent implements OnInit{
     
 
   submit(data:any){
-    this.service.createELEMENT_DATA({ ...data, id:data['id']}).subscribe(d => {
+    this.service.createELEMENT_DATA({ ...data, id:data['id']}).subscribe(createStudent => {
       // window.location.reload();
-      console.log("---d--", d)
+      // console.log("-----", createStudent)
     });
   
     this.dialog.closeAll();
-    console.log("---",data)
+    // console.log("---",data)
   } 
 
 
   updatefn(){
     this.service.editELEMENT_DATA({...this.formGroup1.value, ...this.formGroup2.value,
       ...this.formGroup3.value, ...this.formGroup4.value,
-      }).subscribe(d => {
+      }).subscribe(updateStudentData => {
       window.location.reload();
-      console.log("---d---",d)
+      // console.log("------",updateStudentData)
     });
   }
   
@@ -153,27 +153,27 @@ export class StepperSelectorComponent implements OnInit{
 
 
   form1(){
-    console.log(this.formGroup1.value);
+    // console.log(this.formGroup1.value);
   }
 
   form2(){
-    console.log(this.formGroup2.value);
+    // console.log(this.formGroup2.value);
   }
 
   form3(){
-    console.log(this.formGroup3.value);
+    // console.log(this.formGroup3.value);
   }
 
   form4(){
-    console.log(this.formGroup4.value);
+    // console.log(this.formGroup4.value);
   }
 
   form5(){
-    console.log(this.formGroup5.value);
+    // console.log(this.formGroup5.value);
   }
 
   form6(){
-    console.log(this.formGroup6.value);
+    // console.log(this.formGroup6.value);
   }
 
   form7(){
@@ -181,8 +181,8 @@ export class StepperSelectorComponent implements OnInit{
     
     this.service.createELEMENT_DATA({...this.formGroup1.value, ...this.formGroup2.value,
                                     ...this.formGroup3.value, ...this.formGroup4.value,
-                                    }).subscribe(a=>{
-                                      console.log('------',a)
+                                    }).subscribe(submittingStudentData =>{
+                                      // console.log('------', submittingStudentData)
                                     })
                                     this.dialog.closeAll();
 

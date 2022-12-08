@@ -21,7 +21,8 @@ export class CollegeExhibitionComponent implements OnInit{
   }
 
   submit(data:any){
-    console.log('--------------',data)
+    return data
+    // console.log('--------------',data)
   }
 }
 
