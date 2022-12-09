@@ -27,10 +27,10 @@ const routes: Routes = [
   {path:'add-newstudent', component:AddNewstudentComponent},
   {path:'compinteractdetails', component:CompinteractdetailsComponent},
   {path: 'wishlist',  canActivate:[Routerguard] , component: JsondashboardComponent},
-  {path:'cards-exhibitions',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent, 
+  {path:'cards-exhibitions',  canActivate:[Routerguard] , 
     children: [
       {
-        path :'Conference',
+        path :':/Conference',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
@@ -40,22 +40,22 @@ const routes: Routes = [
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : 'General-and-Political-Science',
+        path : ':General-and-Political-Science',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : 'Software',
+        path : ':Software',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : 'Non-academic',
+        path : ':Non-academic',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : 'Space-Science',
+        path : ':Space-Science',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
