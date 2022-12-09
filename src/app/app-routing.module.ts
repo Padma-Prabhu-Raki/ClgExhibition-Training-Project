@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CollegeExhibitionComponent } from './college-exhibition/college-exhibition.component';
 import { JsondashboardComponent } from './jsondashboard/jsondashboard.component';
@@ -27,40 +27,50 @@ const routes: Routes = [
   {path:'add-newstudent', component:AddNewstudentComponent},
   {path:'compinteractdetails', component:CompinteractdetailsComponent},
   {path: 'wishlist',  canActivate:[Routerguard] , component: JsondashboardComponent},
-  {path:'cards-exhibitions',  canActivate:[Routerguard] , 
+  {path:'cards-exhibitions',  canActivate:[Routerguard], component:CardsTopicsexhibitionsComponent, 
     children: [
       {
-        path :':/Conference',
+        path :'Conference',
+        canActivate : [Routerguard],
+        // redirectTo : '/Conference',
+        component : CardsTopicsexhibitionsComponent
+      },
+      {
+        path : 'Hardware',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : ':/Hardware ',
+        path : 'General-and-Political-Science',
+        canActivate : [Routerguard],
+        // redirectTo : '/General-and-Political-Science',
+        // pathMatch : 'full',
+        component : CardsTopicsexhibitionsComponent
+      },
+      {
+        path : 'Software',
+        // redirectTo : '/Software',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : ':/General-and-Political-Science',
+        path : 'Non-academic',
+        // redirectTo : '/Non-academic',
         canActivate : [Routerguard],
+        // redirectTo : '/Non-academic',
+        // pathMatch : 'full',
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : ':Software',
+        path : 'Space-Science',
+        // redirectTo : '/Space-Science',
         canActivate : [Routerguard],
-        component : CardsTopicsexhibitionsComponent
-      },
-      {
-        path : ':Non-academic',
-        canActivate : [Routerguard],
-        component : CardsTopicsexhibitionsComponent
-      },
-      {
-        path : ':/Space-Science',
-        canActivate : [Routerguard],
+        // redirectTo : '/Space-Science',
+        // pathMatch : 'full',
         component : CardsTopicsexhibitionsComponent
       },
     ]
-    },  
+  },  
   // {path:'Conference',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
   // {path:'Hardware',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
   // {path:'General-and-Political-Science',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
