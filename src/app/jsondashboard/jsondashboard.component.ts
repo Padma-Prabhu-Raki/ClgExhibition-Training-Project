@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject} from '@angular/core';
+import { Component, OnInit, OnDestroy,Inject} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Data } from '@angular/router';
 import { filter, map, Observable, of, windowWhen } from 'rxjs';
@@ -15,9 +15,12 @@ import { HeaderdashboardComponent } from '../headerdashboard/headerdashboard.com
   templateUrl: './jsondashboard.component.html',
   styleUrls: ['./jsondashboard.component.css']
 })
-export class JsondashboardComponent implements OnInit{
+export class JsondashboardComponent implements OnInit, OnDestroy{
   displayedColumns: string[] = ['id', 'name', 'email', 'mobile', 'reg_no', 'dept', 'topic', 'duration','menubar','wishness'];
   dataSource : Observable<any>= of([{}])
+
+  deleteDataSubscription :any;
+  editWishSubscription : any;
   
   wishing:any;
 
@@ -40,6 +43,11 @@ export class JsondashboardComponent implements OnInit{
 
     // this.dataStudent = this.service.dataEvent$
     // this.wishing = this.service.getELEMENT_DATA().pipe(filter((n:any) => n.wishness === true))
+  }
+
+  ngOnDestroy(){
+    this.deleteDataSubscription?.unsubscribe();
+    this.editWishSubscription?.unsubscribe();
   }
 
   register(){
@@ -94,7 +102,7 @@ export class JsondashboardComponent implements OnInit{
 
   deleteRow(id:any){
     // console.log('---ele====', element)
-    this.service.deleteELEMENT_DATA(id).subscribe(deletedata => {
+    this.deleteDataSubscription = this.service.deleteELEMENT_DATA(id).subscribe(() => {
       // console.log('------', deletedata)
     })
     window.location.reload();
@@ -106,7 +114,7 @@ export class JsondashboardComponent implements OnInit{
 
 
   editfav(element:any){
-    this.service.updatewish(element).subscribe(editwish => {
+    this.editWishSubscription = this.service.updatewish(element).subscribe(() => {
       window.location.reload();
       // console.log('----', editwish)
     })

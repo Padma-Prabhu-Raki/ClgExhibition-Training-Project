@@ -35,7 +35,7 @@ export class HeaderdashboardComponent implements OnInit{
   events(){
     this.route.navigate(['/cards-exhibitions'])
 
-    window.location.reload();
+    // window.location.reload();
   }
   
   wishlist(){
@@ -77,6 +77,4 @@ export class HeaderdashboardComponent implements OnInit{
   searchName(data:any){
     this.service.searchItem(data)
   }
-
-
 }

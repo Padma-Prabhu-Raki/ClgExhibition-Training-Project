@@ -3,6 +3,7 @@
     margin-top: 20px;
     height:600px;
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 .image{
@@ -16,7 +17,7 @@
 
 .row{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
 }

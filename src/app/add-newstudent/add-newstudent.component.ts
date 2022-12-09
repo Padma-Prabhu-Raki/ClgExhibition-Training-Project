@@ -1,20 +1,24 @@
 import { createInjectableType } from '@angular/compiler';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnDestroy, Inject, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { SampleServiceService } from '../sample-service.service';
 import { MatFormField,  MatFormFieldAppearance, MatFormFieldControl, MatFormFieldDefaultOptions} from '@angular/material/form-field';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {Subject, takeUntil} from 'rxjs';
 
 @Component({
   selector: 'app-add-newstudent',
   templateUrl: './add-newstudent.component.html',
   styleUrls: ['./add-newstudent.component.css']
 })
-export class AddNewstudentComponent implements OnInit{
+export class AddNewstudentComponent implements OnDestroy,OnInit{
   formdata: any;
   editDetails: any;
+
+  OnDestroySubject$ = new Subject<boolean>
+
   constructor(public dialog:MatDialog, private service: SampleServiceService, private route:ActivatedRoute,
           @Inject(MAT_DIALOG_DATA) public data: any,
           private _snackBar:MatSnackBar){ }
@@ -31,8 +35,13 @@ export class AddNewstudentComponent implements OnInit{
     });
   }
 
+  ngOnDestroy(): void {
+    this.OnDestroySubject$.next(true);
+    this.OnDestroySubject$.complete()
+  }
+
   submit(data:any){
-    this.service.createELEMENT_DATA({ ...data, id:data['id']}).subscribe(createStudentData => {
+    this.service.createELEMENT_DATA({ ...data, id:data['id']}).pipe(takeUntil(this.OnDestroySubject$)).subscribe(() => {
       // window.location.reload();
       // console.log("-----", createStudentData)
     });
@@ -42,7 +51,7 @@ export class AddNewstudentComponent implements OnInit{
   }
 
   updatefn(editData:any){
-    this.service.editELEMENT_DATA(editData).subscribe(editStudentData => {
+    this.service.editELEMENT_DATA(editData).pipe(takeUntil(this.OnDestroySubject$)).subscribe(editStudentData => {
       window.location.reload();
       // console.log("---d---",editStudentData)
     });

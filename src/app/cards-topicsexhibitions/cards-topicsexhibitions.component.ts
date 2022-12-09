@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable, of, map } from 'rxjs';
+import { Event, NavigationStart, Router, RouterEvent } from '@angular/router';
+import { Observable, of, map, filter } from 'rxjs';
 import { SampleServiceService } from '../sample-service.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class CardsTopicsexhibitionsComponent implements OnInit{
 
 
  cardDetails : any;
+//  filteredCardDetails : any;
 
  constructor(private service: SampleServiceService, private route:Router){}
 
@@ -24,30 +25,71 @@ export class CardsTopicsexhibitionsComponent implements OnInit{
 //  }
 
 ngOnInit(): void {
-  if(this.route.url.includes('cards-exhibitions')){
+  this.route.events.pipe(filter((routenav) => routenav instanceof NavigationStart)
+  ).subscribe((routenavurl:any) => {
+    console.log('---', routenavurl);
+
     this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
-      return cardData.filter((cardDomain:any) => {
-      if(cardDomain.domain === "Conference"){
-        return;
+      if(routenavurl.url.includes('Conference')) {
+        return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Conference");
+      } 
+
+      else if(routenavurl.url.includes('Hardware')){ 
+        return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Hardware")
       }
-      else if(cardDomain.domain === "Hardware"){
-        return;
+
+      else if(routenavurl.url.includes('General-and-Political-Science')){
+        return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Political Science")
       }
-      else if(cardDomain.domain === "General and Political Science"){
-        return;
+
+      else if(routenavurl.url.includes('Software')){
+        return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Software")
       }
-      else if(cardDomain.domain === "Software"){
-        return;
+
+      else if(routenavurl.url.includes('Non-academic')){
+        return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Non-academic")
       }
-      else if(cardDomain.domain === "Non-academic"){
-        return;
+
+      else if(routenavurl.url.includes('Space-Science')){
+        return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Space-Science")
       }
-      else if(cardDomain.domain === "Space-Science"){
-        return;
+      else{
+        return routenavurl.url.navigate(['cards-exhibitions']) 
       }
-      })
+      // window.location.reload()
     }))
-  } 
+  })
+  // if(this.route.url.includes('cards-exhibitions')){
+    // this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
+    //   if(this.route.url.includes('Conference')) {
+    //     return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Conference");
+    //   } 
+
+    //   else if(this.route.url.includes('Hardware')){
+    //     return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Hardware")
+    //   }
+
+    //   else if(this.route.url.includes('General-and-Political-Science')){
+    //     return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Political Science")
+    //   }
+
+    //   else if(this.route.url.includes('Software')){
+    //     return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Software")
+    //   }
+
+    //   else if(this.route.url.includes('Non-academic')){
+    //     return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Non-academic")
+    //   }
+
+    //   else if(this.route.url.includes('Space-Science')){
+    //     return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Space-Science")
+    //   }
+    //   else{
+    //     return this.route.navigate(['cards-exhibitions']) 
+    //   }
+    //   // window.location.reload()
+    // }))
+  }
 }
 
   // if(this.route.url.includes('Hardware')){
@@ -85,6 +127,7 @@ ngOnInit(): void {
 
 
 
+// Previous cards:
 
   // cards=[
   //   {
@@ -129,5 +172,4 @@ ngOnInit(): void {
   //     description : 'All cultural events like Singing, Dance, MIME etc., and non-cultural events like ShortFilm Making, Photography Contest etc.,',
   //     image : 'https://miro.medium.com/max/500/1*Y0NjhuKAG_v8BniUqfcS6Q.jpeg'
   //   }
-  // ]
-}
+  // ]}
