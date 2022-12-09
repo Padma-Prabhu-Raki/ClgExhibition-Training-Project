@@ -35,12 +35,12 @@ const routes: Routes = [
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : ':Hardware ',
+        path : ':/Hardware ',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : ':General-and-Political-Science',
+        path : ':/General-and-Political-Science',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
@@ -55,7 +55,7 @@ const routes: Routes = [
         component : CardsTopicsexhibitionsComponent
       },
       {
-        path : ':Space-Science',
+        path : ':/Space-Science',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },

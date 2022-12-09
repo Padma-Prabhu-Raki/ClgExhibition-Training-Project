@@ -28,7 +28,7 @@ ngOnInit(): void {
     this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
       return cardData.filter((cardDomain:any) => {
       if(cardDomain.domain === "Conference"){
-        return cardData;
+        return;
       }
       else if(cardDomain.domain === "Hardware"){
         return;
