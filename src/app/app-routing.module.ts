@@ -55,7 +55,6 @@ const routes: Routes = [
       },
       {
         path : 'Non-academic',
-        // redirectTo : '/Non-academic',
         canActivate : [Routerguard],
         // redirectTo : '/Non-academic',
         // pathMatch : 'full',
@@ -63,7 +62,6 @@ const routes: Routes = [
       },
       {
         path : 'Space-Science',
-        // redirectTo : '/Space-Science',
         canActivate : [Routerguard],
         // redirectTo : '/Space-Science',
         // pathMatch : 'full',
