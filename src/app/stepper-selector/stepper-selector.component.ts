@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { MatStepperPrevious, MatStepperNext, MatStepper } from '@angular/material/stepper';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -8,15 +8,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSelectService } from '../mat-select.service';
 import { SampleServiceService } from '../sample-service.service';
 import { Country, State, City }  from 'country-state-city';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-stepper-selector',
   templateUrl: './stepper-selector.component.html',
   styleUrls: ['./stepper-selector.component.css']
 })
-export class StepperSelectorComponent implements OnInit{
+export class StepperSelectorComponent implements OnDestroy,OnInit{
   // countries : any
   states:any
+
+  OndestroySubs$ =new Subject<boolean>
 
   constructor(private _formBuilder: FormBuilder, private _snackBar: MatSnackBar, 
               private dialog:MatDialog, private service:SampleServiceService,
@@ -37,8 +40,12 @@ export class StepperSelectorComponent implements OnInit{
     })
   }
 
+  
+  ngOnDestroy(): void {
+    this.OndestroySubs$.next(true);
+    this.OndestroySubs$.complete()
+  }
 
-  // ngOnInit() {
   formGroup1 = this._formBuilder.group(
     { id : (this.data?.id ?? '') ,
       name : [this.data?.name ?? '', Validators.required]
@@ -90,7 +97,7 @@ export class StepperSelectorComponent implements OnInit{
     
 
   submit(data:any){
-    this.service.createELEMENT_DATA({ ...data, id:data['id']}).subscribe(createStudent => {
+    this.service.createELEMENT_DATA({ ...data, id:data['id']}).pipe(takeUntil(this.OndestroySubs$)).subscribe(createStudent => {
       // window.location.reload();
       // console.log("-----", createStudent)
     });
@@ -103,7 +110,7 @@ export class StepperSelectorComponent implements OnInit{
   updatefn(){
     this.service.editELEMENT_DATA({...this.formGroup1.value, ...this.formGroup2.value,
       ...this.formGroup3.value, ...this.formGroup4.value,
-      }).subscribe(updateStudentData => {
+      }).pipe(takeUntil(this.OndestroySubs$)).subscribe(updateStudentData => {
       window.location.reload();
       // console.log("------",updateStudentData)
     });
@@ -181,7 +188,7 @@ export class StepperSelectorComponent implements OnInit{
     
     this.service.createELEMENT_DATA({...this.formGroup1.value, ...this.formGroup2.value,
                                     ...this.formGroup3.value, ...this.formGroup4.value,
-                                    }).subscribe(submittingStudentData =>{
+                                    }).pipe(takeUntil(this.OndestroySubs$)).subscribe(submittingStudentData =>{
                                       // console.log('------', submittingStudentData)
                                     })
                                     this.dialog.closeAll();
