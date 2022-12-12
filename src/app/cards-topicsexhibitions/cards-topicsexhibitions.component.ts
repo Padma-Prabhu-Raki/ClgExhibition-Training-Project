@@ -54,7 +54,7 @@ ngOnInit(): void {
         return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Space-Science")
       }
       else{
-        return routenavurl.url.navigate(['cards-exhibitions']) 
+        return routenavurl.navigate(['cards-exhibitions']) 
       }
       // window.location.reload()
     }))
