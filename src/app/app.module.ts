@@ -37,6 +37,7 @@ import { Routerguard } from './routerguard';
 import { CardsTopicsexhibitionsComponent } from './cards-topicsexhibitions/cards-topicsexhibitions.component';
 import {MatListModule} from '@angular/material/list';
 import { SampleDirective } from './sample.directive';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { SampleDirective } from './sample.directive';
     MatSelectModule,
     MatRadioModule,
     MatPaginatorModule,
-    MatListModule
+    MatListModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     Routerguard,
