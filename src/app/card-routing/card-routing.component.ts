@@ -14,17 +14,15 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./card-routing.component.css']
 })
 export class CardRoutingComponent implements OnInit,OnDestroy{
-  Studentdetails:any
+  Studentdetails: any;
   onDestroy$ = new Subject<boolean>
   
   constructor(private route:ActivatedRoute, private dialog:MatDialog, private service:SampleServiceService,
               private router:Router){ }
 
   ngOnInit(){
-    // console.log(this.route.snapshot.params)
     this.service.getStudentDetails(this.route.snapshot.params['id']).pipe(takeUntil(this.onDestroy$)).subscribe(getStudentById => {
       this.Studentdetails = getStudentById
-      // console.log('---------',getStudentById)
     })
   }
 
@@ -46,8 +44,6 @@ export class CardRoutingComponent implements OnInit,OnDestroy{
   deleteclick(Studentdetails:any){
     this.service.deleteELEMENT_DATA(Studentdetails.id).pipe(takeUntil(this.onDestroy$)).subscribe(deleteStudent => {
       this.router.navigate(['jsondashboard'])
-      console.log("------",deleteStudent)
-      // console.log("--------",deleteStudent)
     });
   }
 }

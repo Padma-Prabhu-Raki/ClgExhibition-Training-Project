@@ -1,27 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Subject, BehaviorSubject, Observable, filter } from 'rxjs';
-import * as countrycitystatejson from 'country-state-city';
-// import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-
-// interface CanActivate {
-//   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree
-// }
-
+import { clgExhibitionInterface } from './model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SampleServiceService {
 
-  // fromService='This is from Service'
-  // private message = new BehaviorSubject<string>('default message');
-  // getMessage = this.message.asObservable();
-
-  private dataSubject$ = new Subject<any>();
+  private dataSubject$ = new Subject<clgExhibitionInterface[]>();
   dataEvent$ = this.dataSubject$.asObservable();
 
-  data:any;
+  data: clgExhibitionInterface[]=[];
 
   
   API_URL = 'http://localhost:3000/clgExhibition';
@@ -32,18 +22,8 @@ export class SampleServiceService {
 
   constructor(private http: HttpClient) { }
 
-  // updateMessage(msg: string) {
-  //   console.log('----msg---', msg)
-  //   // console.log('----msg---', msg)
-  //   this.message.next(msg);
-  // }
-
-  // getELEMENT_DATA(){
-  //   return this.http.get(this.API_URL)
-  // }
-
   getELEMENT_DATA(){
-     this.http.get(this.API_URL).subscribe(searc => {
+     this.http.get(this.API_URL).subscribe((searc:any) => {
       this.dataSubject$.next(searc);
       this.data = searc;
     })
@@ -56,23 +36,20 @@ export class SampleServiceService {
   }
 
 
-  deleteELEMENT_DATA(id: any) : Observable<any> {
+  deleteELEMENT_DATA(id:any) : Observable<any> {
     // console.log(id)
     return this.http.delete(`${this.API_URL}/${id}`);
-
-    // return this.http.delete('http://localhost:3000/clgExhibition/1');
   }
 
   editELEMENT_DATA(data:any) : Observable<any> {
     return this.http.put(`${this.API_URL}/${data.id}`,data);
   }
 
-  getStudentDetails(id:any){
+  getStudentDetails(id: any){
     return this.http.get(`${this.API_URL}/${id}`)
   }
 
   loginpageurl(data: any) : Observable<any> {
-    // console.log('------', data)
     return this.http.post(`${this.login_URL}`, data) 
   }
 
@@ -85,7 +62,7 @@ export class SampleServiceService {
   }
 
 
-  updatewish(data:any){
+  updatewish(data:clgExhibitionInterface){
     const newData ={
       ...data,
       wishness : !data.wishness
@@ -98,22 +75,6 @@ export class SampleServiceService {
     this.dataSubject$.next(
       this.data?.filter((val:any) => val.name.toLowerCase().includes(searc.toLowerCase())))
   }
-
-  // 28-11-2022
-  
-  // getCountries() {
-  //   return this.countryData.getCountries();
-  // }
-
-  // getStatesByCountry(countryShotName: string) {
-  //   return this.countryData.getStatesByShort(countryShotName);
-  // }
-
-  // getCitiesByState(country: string, state: string) {
-  //   return this.countryData.getCities(country, state);
-  // }
-
-
 
 }
 

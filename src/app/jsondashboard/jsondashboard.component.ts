@@ -9,6 +9,7 @@ import { AddNewstudentComponent } from '../add-newstudent/add-newstudent.compone
 import { StepperSelectorComponent } from '../stepper-selector/stepper-selector.component';
 // import { MatTable } from '@angular/material/table';
 import { HeaderdashboardComponent } from '../headerdashboard/headerdashboard.component';
+import { clgExhibitionInterface } from '../model';
 
 @Component({
   selector: 'app-jsondashboard',
@@ -17,7 +18,7 @@ import { HeaderdashboardComponent } from '../headerdashboard/headerdashboard.com
 })
 export class JsondashboardComponent implements OnInit, OnDestroy{
   displayedColumns: string[] = ['id', 'name', 'email', 'mobile', 'reg_no', 'dept', 'topic', 'duration','menubar','wishness'];
-  dataSource : Observable<any>= of([{}])
+  dataSource : Observable<clgExhibitionInterface[]>= of([])
 
   deleteDataSubscription :any;
   editWishSubscription : any;
@@ -31,7 +32,6 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
 
     // console.log('---url---',this.route.url)
     this.service.getELEMENT_DATA()
-    // this.service.getStudents()
     if(this.route.url.includes('jsondashboard')) {
       this.dataSource = this.service.dataEvent$ 
     }
@@ -60,29 +60,17 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
     this.router.navigate(['/cards-exhibitions'])
   }
   
-  wishlist(data:any){
-    // this.dataSource.pipe(filter((wish) => wish.wishness === true)) 
+  wishlist(data : any){
     this.route.navigate(['wishlist'])
   }
 
   logout(){
     // localStorage.clear()
     localStorage.setItem('loginSuccessful','false')
-    // console.log(localStorage.)
     this.router.navigate(['/'])
   }
 
   editRow(ele:any){
-    // this.service.createELEMENT_DATA({
-    //   id:1,
-    //   name: "Simran",
-    //   reg_no: 123,
-    //   dept: "CSE",
-    //   topic: "Software",
-    //   duration : 6
-    //     }).subscribe(d => {
-    //   console.log("----------------------", d)
-    // })
 
     // this.service.editELEMENT_DATA({}).subscribe(d => {
     //   console.log('----------',d)
@@ -96,19 +84,15 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
       },
       disableClose: true
     });
-
-    // window.location.reload();
   }
 
-  deleteRow(id:any){
-    // console.log('---ele====', element)
+  deleteRow(id:string){
     this.deleteDataSubscription = this.service.deleteELEMENT_DATA(id).subscribe(() => {
-      // console.log('------', deletedata)
     })
     window.location.reload();
   }
   
-  funct(id:any){
+  funct(id:string){
     this.router.navigate(['/card-routing', id]);
   }
 

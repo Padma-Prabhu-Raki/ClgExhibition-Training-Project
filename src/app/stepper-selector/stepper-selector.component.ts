@@ -33,7 +33,7 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
       state : this.state
     })
 
-    this.country.valueChanges.subscribe((countryName:any) => {
+    this.country.valueChanges.pipe(takeUntil(this.OndestroySubs$)).subscribe((countryName:any) => {
       this.states = State.getStatesOfCountry(countryName.isoCode)
       // console.log('----',countryName)
       // console.log('-----', this.states)
@@ -69,7 +69,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
   formGroup4 = this._formBuilder.group(
     { topic : this.data?.topic ?? '',
       duration : [this.data?.duration ?? '', Validators.required],
-      // {duration : ['', Validators.required],}
     }
   );
 
@@ -98,12 +97,9 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
 
   submit(data:any){
     this.service.createELEMENT_DATA({ ...data, id:data['id']}).pipe(takeUntil(this.OndestroySubs$)).subscribe(createStudent => {
-      // window.location.reload();
-      // console.log("-----", createStudent)
     });
   
     this.dialog.closeAll();
-    // console.log("---",data)
   } 
 
 
@@ -114,6 +110,7 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
       window.location.reload();
       // console.log("------",updateStudentData)
     });
+    this.dialog.closeAll();
   }
   
   cancel(){
@@ -189,7 +186,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
     this.service.createELEMENT_DATA({...this.formGroup1.value, ...this.formGroup2.value,
                                     ...this.formGroup3.value, ...this.formGroup4.value,
                                     }).pipe(takeUntil(this.OndestroySubs$)).subscribe(submittingStudentData =>{
-                                      // console.log('------', submittingStudentData)
                                     })
                                     this.dialog.closeAll();
 
