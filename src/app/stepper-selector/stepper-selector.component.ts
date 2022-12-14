@@ -35,8 +35,7 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
 
     this.country.valueChanges.pipe(takeUntil(this.OndestroySubs$)).subscribe((countryName:any) => {
       this.states = State.getStatesOfCountry(countryName.isoCode)
-      // console.log('----',countryName)
-      // console.log('-----', this.states)
+
     })
   }
 
@@ -108,7 +107,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
       ...this.formGroup3.value, ...this.formGroup4.value,
       }).pipe(takeUntil(this.OndestroySubs$)).subscribe(updateStudentData => {
       window.location.reload();
-      // console.log("------",updateStudentData)
     });
     this.dialog.closeAll();
   }
@@ -129,55 +127,28 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
     this._snackBar.open('Thanks for Visting our Page')
   }
 
-  // this.country.valueChanges.subscribe((country) => {
-  //   this.state.reset();
-  //   this.state.disable();
-  //   if (country) {
-  //     this.State = this.service.getStatesByCountry(country);
-  //     this.state.enable();
-  //   }
-  // });
-
-
-// Correct code:
-  // ngOnInit(): void {
-  //   this.countries = Country.getAllCountries()
-
-  //   this.formGroup6 = new FormGroup({
-  //     countryname : this.countryname,
-  //     state : this.state
-  //   })
-
-  //   this.countryname.valueChanges.subscribe((d:any) => {
-  //     this.states = State.getStatesOfCountry(d.isocode)
-  //     console.log('----',d)
-  //     console.log('-----', this.states)
-  //   })
-  // }
-
-
   form1(){
-    // console.log(this.formGroup1.value);
+    (this.formGroup1.value);
   }
 
   form2(){
-    // console.log(this.formGroup2.value);
+    this.formGroup2.value;
   }
 
   form3(){
-    // console.log(this.formGroup3.value);
+    this.formGroup3.value;
   }
 
   form4(){
-    // console.log(this.formGroup4.value);
+    this.formGroup4.value;
   }
 
   form5(){
-    // console.log(this.formGroup5.value);
+    this.formGroup5.value;
   }
 
   form6(){
-    // console.log(this.formGroup6.value);
+    (this.formGroup6.value);
   }
 
   form7(){

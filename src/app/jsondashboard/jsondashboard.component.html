@@ -6,34 +6,42 @@
           <th mat-header-cell *matHeaderCellDef> S.No.</th>
           <td mat-cell *matCellDef="let element">{{element.id}}</td>
         </ng-container>
+
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Name </th>
           <td mat-cell *matCellDef="let element">{{element.name}}</td>
         </ng-container>
+
         <ng-container matColumnDef="email">
           <th mat-header-cell *matHeaderCellDef> Email-ID </th>
           <td mat-cell *matCellDef="let element">{{element.email}}</td>
         </ng-container>
+
         <ng-container matColumnDef="mobile">
           <th mat-header-cell *matHeaderCellDef> Mobile </th>
           <td mat-cell *matCellDef="let element">{{element.mobile}}</td>
         </ng-container>
+
         <ng-container matColumnDef="reg_no">
           <th mat-header-cell *matHeaderCellDef> Reg. No. </th>
           <td mat-cell *matCellDef="let element">{{element.reg_no}}</td>
         </ng-container>
+
         <ng-container matColumnDef="dept">
           <th mat-header-cell *matHeaderCellDef> Dept. </th>
           <td mat-cell *matCellDef="let element">{{element.dept}}</td>
         </ng-container>
+
         <ng-container matColumnDef="topic">
           <th mat-header-cell *matHeaderCellDef> Topic of Execution </th>
           <td mat-cell *matCellDef="let element">{{element.topic}}</td>
         </ng-container>
+
         <ng-container matColumnDef="duration">
           <th mat-header-cell *matHeaderCellDef> Time Duration </th>
-          <td mat-cell *matCellDef="let element">{{element.duration}}</td>
+          <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
         </ng-container>
+
         <ng-container matColumnDef="menubar">
           <th mat-header-cell *matHeaderCellDef> &nbsp; </th>
           <td mat-cell *matCellDef="let element">
@@ -56,8 +64,6 @@
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-        
 
       </table>
 </div>

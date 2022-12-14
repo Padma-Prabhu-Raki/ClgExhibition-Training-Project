@@ -30,7 +30,6 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
 
   ngOnInit(){
 
-    // console.log('---url---',this.route.url)
     this.service.getELEMENT_DATA()
     if(this.route.url.includes('jsondashboard')) {
       this.dataSource = this.service.dataEvent$ 
@@ -41,8 +40,6 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
       }))
     }
 
-    // this.dataStudent = this.service.dataEvent$
-    // this.wishing = this.service.getELEMENT_DATA().pipe(filter((n:any) => n.wishness === true))
   }
 
   ngOnDestroy(){
@@ -65,17 +62,11 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
   }
 
   logout(){
-    // localStorage.clear()
     localStorage.setItem('loginSuccessful','false')
     this.router.navigate(['/'])
   }
 
   editRow(ele:any){
-
-    // this.service.editELEMENT_DATA({}).subscribe(d => {
-    //   console.log('----------',d)
-    // })
-    // this.router.navigate(['add-newstudent',id]);
     this.dialog.open(StepperSelectorComponent,{
       data: {
         ...ele,
@@ -100,7 +91,6 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
   editfav(element:any){
     this.editWishSubscription = this.service.updatewish(element).subscribe(() => {
       window.location.reload();
-      // console.log('----', editwish)
     })
   }
 }

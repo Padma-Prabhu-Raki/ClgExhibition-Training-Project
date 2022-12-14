@@ -22,7 +22,6 @@ export class EditdashboardComponent implements OnDestroy,OnInit{
   ngOnInit(){
     this.service.getStudentDetails(this.route.snapshot.params['id']).pipe(takeUntil(this.DestroySubs$)).subscribe(getStudentById => {
       this.StudentDetails = getStudentById
-      // console.log('---------',getStudentById)
     })
   }
 
@@ -34,8 +33,7 @@ export class EditdashboardComponent implements OnDestroy,OnInit{
   save(data:any){
     this.service.editELEMENT_DATA({ ...data, id:data['id']}).pipe(takeUntil(this.DestroySubs$)).subscribe(editStudent => {
       window.location.reload();
-      // console.log("-------d-------", d)
     })
-}
+  }
 
 }

@@ -1,5 +1,5 @@
 {
-  "clgExhibition":  [
+  "clgExhibition": [
     {
       "id": "1",
       "name": "Simran R K",
@@ -130,7 +130,7 @@
       "reg_no": 22,
       "topic": "SAP",
       "duration": 8,
-      "wishness" : false
+      "wishness": false
     },
     {
       "id": "14",
@@ -142,6 +142,16 @@
       "topic": "Group Dance",
       "duration": 8,
       "wishness": true
+    },
+    {
+      "id": 15,
+      "name": "Ramesh",
+      "email": "rm@gmail.com",
+      "mobile": "1251454151",
+      "dept": "Business",
+      "reg_no": 45,
+      "topic": "Vyapar",
+      "duration": 8
     }
   ],
   "cards": [
@@ -195,11 +205,11 @@
       "image": "https://miro.medium.com/max/500/1*Y0NjhuKAG_v8BniUqfcS6Q.jpeg"
     },
     {
-      "title" : " National Level Space Expo ",
-      "topic" : " Satellite Models, Engines, list of satellites launched by ISRO",
-      "domain" : "Space-Science",
-      "description" : "Conference on Historical Moments of Space Science and various Models of Space Vehicles and its Engines, \n Satellites launched by various nations \n Smart Preview of Future Missions by ISRO",
-      "image"  : "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/09/17/868490-space-exhibition.jpg"
+      "title": " National Level Space Expo ",
+      "topic": " Satellite Models, Engines, list of satellites launched by ISRO",
+      "domain": "Space-Science",
+      "description": "Conference on Historical Moments of Space Science and various Models of Space Vehicles and its Engines, \n Satellites launched by various nations \n Smart Preview of Future Missions by ISRO",
+      "image": "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/09/17/868490-space-exhibition.jpg"
     }
   ]
 }
