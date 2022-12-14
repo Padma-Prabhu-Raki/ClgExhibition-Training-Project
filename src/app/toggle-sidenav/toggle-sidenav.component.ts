@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatDialog } from '@angular/material/dialog';
 import { SampleServiceService } from '../sample-service.service';
-// import { MatButton } from '@angular/material/button';
 import { JsondashboardComponent } from '../jsondashboard/jsondashboard.component';
 
 @Component({

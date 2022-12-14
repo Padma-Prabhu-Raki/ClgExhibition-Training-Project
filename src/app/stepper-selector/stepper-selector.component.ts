@@ -16,7 +16,6 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./stepper-selector.component.css']
 })
 export class StepperSelectorComponent implements OnDestroy,OnInit{
-  // countries : any
   states:any
 
   OndestroySubs$ =new Subject<boolean>
@@ -35,8 +34,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
 
     this.country.valueChanges.subscribe((countryName:any) => {
       this.states = State.getStatesOfCountry(countryName.isoCode)
-      // console.log('----',countryName)
-      // console.log('-----', this.states)
     })
   }
 
@@ -56,7 +53,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
   formGroup2 = this._formBuilder.group(
     { email : [this.data?.email ?? '', Validators.required],
       mobile : [this.data?.mobile ?? '', Validators.required],
-      // { mobile : ['', Validators.required]}
     }
   );
 
@@ -69,7 +65,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
   formGroup4 = this._formBuilder.group(
     { topic : this.data?.topic ?? '',
       duration : [this.data?.duration ?? '', Validators.required],
-      // {duration : ['', Validators.required],}
     }
   );
 
@@ -85,10 +80,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
   state = new FormControl(null, Validators.required)
 
   countries:any
-    
-  // this.service.getCountries().subscribe{
-  //   data => this.countries = data
-  // };
 
   formGroup7 = this._formBuilder.group(
     { gender: [this.data?.gender ?? '', Validators.required],}
@@ -98,12 +89,9 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
 
   submit(data:any){
     this.service.createELEMENT_DATA({ ...data, id:data['id']}).pipe(takeUntil(this.OndestroySubs$)).subscribe(createStudent => {
-      // window.location.reload();
-      // console.log("-----", createStudent)
     });
   
     this.dialog.closeAll();
-    // console.log("---",data)
   } 
 
 
@@ -112,7 +100,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
       ...this.formGroup3.value, ...this.formGroup4.value,
       }).pipe(takeUntil(this.OndestroySubs$)).subscribe(updateStudentData => {
       window.location.reload();
-      // console.log("------",updateStudentData)
     });
   }
   
@@ -132,64 +119,37 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
     this._snackBar.open('Thanks for Visting our Page')
   }
 
-  // this.country.valueChanges.subscribe((country) => {
-  //   this.state.reset();
-  //   this.state.disable();
-  //   if (country) {
-  //     this.State = this.service.getStatesByCountry(country);
-  //     this.state.enable();
-  //   }
-  // });
-
-
-// Correct code:
-  // ngOnInit(): void {
-  //   this.countries = Country.getAllCountries()
-
-  //   this.formGroup6 = new FormGroup({
-  //     countryname : this.countryname,
-  //     state : this.state
-  //   })
-
-  //   this.countryname.valueChanges.subscribe((d:any) => {
-  //     this.states = State.getStatesOfCountry(d.isocode)
-  //     console.log('----',d)
-  //     console.log('-----', this.states)
-  //   })
-  // }
-
 
   form1(){
-    // console.log(this.formGroup1.value);
+    this.formGroup1.value;
   }
 
   form2(){
-    // console.log(this.formGroup2.value);
+    this.formGroup2.value;
   }
 
   form3(){
-    // console.log(this.formGroup3.value);
+    this.formGroup3.value;
   }
 
   form4(){
-    // console.log(this.formGroup4.value);
+    this.formGroup4.value;
   }
 
   form5(){
-    // console.log(this.formGroup5.value);
+    this.formGroup5.value;
   }
 
   form6(){
-    // console.log(this.formGroup6.value);
+    this.formGroup6.value;
   }
 
   form7(){
-    // console.log(this.formGroup7.value);
+    this.formGroup7.value;
     
     this.service.createELEMENT_DATA({...this.formGroup1.value, ...this.formGroup2.value,
                                     ...this.formGroup3.value, ...this.formGroup4.value,
                                     }).pipe(takeUntil(this.OndestroySubs$)).subscribe(submittingStudentData =>{
-                                      // console.log('------', submittingStudentData)
                                     })
                                     this.dialog.closeAll();
 

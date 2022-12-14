@@ -32,7 +32,6 @@ const routes: Routes = [
       {
         path :'Conference',
         canActivate : [Routerguard],
-        // redirectTo : '/Conference',
         component : CardsTopicsexhibitionsComponent
       },
       {
@@ -43,43 +42,25 @@ const routes: Routes = [
       {
         path : 'General-and-Political-Science',
         canActivate : [Routerguard],
-        // redirectTo : '/General-and-Political-Science',
-        // pathMatch : 'full',
         component : CardsTopicsexhibitionsComponent
       },
       {
         path : 'Software',
-        // redirectTo : '/Software',
         canActivate : [Routerguard],
         component : CardsTopicsexhibitionsComponent
       },
       {
         path : 'Non-academic',
         canActivate : [Routerguard],
-        // redirectTo : '/Non-academic',
-        // pathMatch : 'full',
         component : CardsTopicsexhibitionsComponent
       },
       {
         path : 'Space-Science',
         canActivate : [Routerguard],
-        // redirectTo : '/Space-Science',
-        // pathMatch : 'full',
         component : CardsTopicsexhibitionsComponent
       },
     ]
   },  
-  // {path:'Conference',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
-  // {path:'Hardware',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
-  // {path:'General-and-Political-Science',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
-  // {path:'Software',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
-  // {path:'Non-academic',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
-  // {path:'Space-Science',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
-
-
-  // {path:'add-newstudent/:id', component:AddNewstudentComponent},
-  // {path:'card-routing/:id', component:CardRoutingComponent},
-  // {path:'editdashboard/:id', component:EditdashboardComponent},
 ];
 
 @NgModule({

@@ -34,19 +34,13 @@ export class HeaderdashboardComponent implements OnInit{
 
   events(){
     this.route.navigate(['/cards-exhibitions'])
-
-    // window.location.reload();
   }
   
   wishlist(){
-    // this.dataSource.pipe(filter((wish) => wish.wishness === true))
-
     this.route.navigate(['/wishlist'])
-
   }
 
   logout(){
-    // localStorage.clear()
     localStorage.setItem('loginSuccessful','false')
     this.route.navigate(['/'])
   }
@@ -64,14 +58,8 @@ export class HeaderdashboardComponent implements OnInit{
 
   }
 
-  // let {text:any, value:any} = 
-
   addStudent(){
     this.dialog.open(StepperSelectorComponent);
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog Result: ${result}`);
-    // });
   }
 
   searchName(data:any){

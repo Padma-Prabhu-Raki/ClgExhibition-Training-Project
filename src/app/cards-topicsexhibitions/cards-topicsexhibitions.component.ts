@@ -12,23 +12,14 @@ export class CardsTopicsexhibitionsComponent implements OnInit{
 
 
  cardDetails : any;
-  //  filteredCardDetails : any;
 
  constructor(private service: SampleServiceService, private route:Router){}
 
 
-  //  ngOnInit(): void {
-  //    this.service.getCardDetails().subscribe( getCardDetailsFromService =>{
-  //     this.cardDetails = getCardDetailsFromService
-  //     // console.log('----', getCardDetailsFromService)
-  //    })
-  //  }
-
   ngOnInit(): void {
     this.route.events.pipe(filter((routenav) => routenav instanceof NavigationStart)
     ).subscribe((routenavurl:any) => {
-      // console.log('---', routenavurl);
-
+      
       this.cardDetails = this.service.getCardDetails().pipe(map((cardData:any) => {
         if(routenavurl.url.includes('Conference')) {
           return cardData.filter((filteredCardDetails:any) => filteredCardDetails.domain === "Conference");
@@ -56,7 +47,6 @@ export class CardsTopicsexhibitionsComponent implements OnInit{
         else{
           return routenavurl.navigate(['cards-exhibitions']) 
         }
-        // window.location.reload()
       }))
     })
   }

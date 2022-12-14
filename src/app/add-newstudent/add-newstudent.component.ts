@@ -42,18 +42,14 @@ export class AddNewstudentComponent implements OnDestroy,OnInit{
 
   submit(data:any){
     this.service.createELEMENT_DATA({ ...data, id:data['id']}).pipe(takeUntil(this.OnDestroySubject$)).subscribe(() => {
-      // window.location.reload();
-      // console.log("-----", createStudentData)
     });
 
     this.dialog.closeAll();
-    // console.log("---",data)
   }
 
   updatefn(editData:any){
     this.service.editELEMENT_DATA(editData).pipe(takeUntil(this.OnDestroySubject$)).subscribe(editStudentData => {
       window.location.reload();
-      // console.log("---d---",editStudentData)
     });
   }
 
