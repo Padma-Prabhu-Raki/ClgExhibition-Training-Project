@@ -55,7 +55,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
   formGroup2 = this._formBuilder.group(
     { email : [this.data?.email ?? '', Validators.required],
       mobile : [this.data?.mobile ?? '', Validators.required],
-      // { mobile : ['', Validators.required]}
     }
   );
 
@@ -128,7 +127,7 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
   }
 
   form1(){
-    (this.formGroup1.value);
+    this.formGroup1.value;
   }
 
   form2(){
@@ -148,11 +147,11 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
   }
 
   form6(){
-    (this.formGroup6.value);
+    this.formGroup6.value;
   }
 
   form7(){
-    // console.log(this.formGroup7.value);
+    this.formGroup7.value;
     
     this.service.createELEMENT_DATA({...this.formGroup1.value, ...this.formGroup2.value,
                                     ...this.formGroup3.value, ...this.formGroup4.value,

@@ -27,6 +27,23 @@ h1{
     
 }
 
+.menu-btn{
+    margin-left:10px; 
+    float: left; 
+    border:1px dotted; 
+    border-color: blueviolet;
+}
+
+.annivfont{
+    padding-left:100px; 
+    color:rgb(40, 24, 218);
+}
+
+.searchinput{
+    height:10%; 
+    margin-left: 10px;
+}
+
 /* .containerarea{
     width:350px;
     height: 150px;
@@ -35,6 +52,15 @@ h1{
 .searchbutton{
     margin-left:20px;
     width:5%
+}
+
+.image{
+    margin-left:10px;
+}
+
+.detailsName{
+    margin-left:35px; 
+    font-weight: 400;
 }
 
 .mit{

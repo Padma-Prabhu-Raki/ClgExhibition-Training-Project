@@ -7,14 +7,14 @@
     </div>
 
     <div class="row">
-        <button mat-button style="margin-left:10px; float: left; border:1px dotted; border-color: blueviolet;" (click)="snav.toggle()">
+        <button mat-button class="menu-btn" (click)="snav.toggle()">
              Menu 
         </button>
 
-        <h1 style="padding-left:100px; color:rgb(40, 24, 218)" sample> 10 Years Completion Anniversary Celebration</h1>
+        <h1 class="annivfont" sample> 10 Years Completion Anniversary Celebration</h1>
 
         <mat-form-field appearance="outline">
-            <input matInput type="search" style="height:10%; margin-left: 10px;" placeholder="Search" #search>
+            <input matInput type="search" class="searchinput" placeholder="Search" #search>
         </mat-form-field>
         <button (click)="searchName(search.value)" class="searchbutton"> Search </button>
 
@@ -25,8 +25,8 @@
                     <mat-card-title> User Details </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                    <p style="margin-left:35px; font-weight: 400;" > <strong> {{details()[1]}} {{details()[2]}}</strong> </p>
-                    <img mat-card-md-image style="margin-left:10px;" src="https://reqres.in/img/faces/1-image.jpg"><br>
+                    <p class="detailsName"> <strong> {{details()[1]}} {{details()[2]}}</strong> </p>
+                    <img mat-card-md-image class="image" src="https://reqres.in/img/faces/1-image.jpg"><br>
                     <p> <strong> {{k}} </strong></p> 
                 </mat-card-content>
                 <mat-card-actions>
@@ -72,5 +72,4 @@
         </mat-sidenav-container>
     </div>
 </div>
-<!-- <h1 style="margin-top: 20px; color:blueviolet"> Participators Details </h1> -->
 

@@ -1,7 +1,6 @@
-<h1 style="margin-top: 20px; color:blueviolet; text-align:center;"> Participators Details </h1>
+<h1 class="head"> Participators Details </h1>
 <div class="dashboardarea">
-      <table style="text-align: center; margin-left:50px; margin-top:5px; border: 2px groove; width: 100%;" 
-              [dataSource]="dataSource" mat-table >
+      <table class="table" [dataSource]="dataSource" mat-table>
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> S.No.</th>
           <td mat-cell *matCellDef="let element">{{element.id}}</td>
