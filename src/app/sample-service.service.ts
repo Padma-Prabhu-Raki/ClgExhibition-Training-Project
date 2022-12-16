@@ -33,7 +33,7 @@ export class SampleServiceService {
   constructor(private http: HttpClient) { }
 
   // updateMessage(msg: string) {
-  //   // console.log('----msg---', msg)
+  //   console.log('----msg---', msg)
   //   this.message.next(msg);
   // }
 
