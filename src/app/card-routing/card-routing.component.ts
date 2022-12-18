@@ -20,15 +20,8 @@ export class CardRoutingComponent implements OnInit,OnDestroy{
               private router:Router){ }
 
   ngOnInit(){
-<<<<<<< HEAD
     this.service.getStudentDetails(this.route.snapshot.params['id']).pipe(takeUntil(this.onDestroy$)).subscribe(getStudentById => {
       this.Studentdetails = getStudentById
-=======
-    // console.log(this.route.snapshot.params)
-    this.service.getStudentDetails(this.route.snapshot.params['id']).subscribe(getStudentById => {
-      this.Studentdetails = getStudentById
-      // console.log('---------',getStudentById)
->>>>>>> master
     })
   }
 
@@ -48,14 +41,8 @@ export class CardRoutingComponent implements OnInit,OnDestroy{
   }
 
   deleteclick(Studentdetails:any){
-<<<<<<< HEAD
     this.service.deleteELEMENT_DATA(Studentdetails.id).pipe(takeUntil(this.onDestroy$)).subscribe(deleteStudent => {
       this.router.navigate(['jsondashboard'])
-=======
-    this.service.deleteELEMENT_DATA(Studentdetails.id).subscribe(deleteStudent => {
-      this.router.navigate(['jsondashboard'])
-      console.log("------",deleteStudent)
->>>>>>> master
     });
   }
 }

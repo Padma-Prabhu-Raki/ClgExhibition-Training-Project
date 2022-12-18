@@ -34,11 +34,7 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
 
     this.country.valueChanges.subscribe((countryName:any) => {
       this.states = State.getStatesOfCountry(countryName.isoCode)
-<<<<<<< HEAD
-=======
-      // console.log('----',countryName)
-      // console.log('-----', this.states)
->>>>>>> master
+
     })
   }
 
@@ -93,34 +89,19 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
     
 
   submit(data:any){
-<<<<<<< HEAD
     this.service.createELEMENT_DATA({ ...data, id:data['id']}).pipe(takeUntil(this.OndestroySubs$)).subscribe(createStudent => {
     });
   
     this.dialog.closeAll();
-=======
-    this.service.createELEMENT_DATA({ ...data, id:data['id']}).subscribe(createStudent => {
-      // window.location.reload();
-      console.log("---d--", createStudent)
-    });
-  
-    this.dialog.closeAll();
-    // console.log("---",data)
->>>>>>> master
   } 
 
 
   updatefn(){
     this.service.editELEMENT_DATA({...this.formGroup1.value, ...this.formGroup2.value,
       ...this.formGroup3.value, ...this.formGroup4.value,
-<<<<<<< HEAD
       }).pipe(takeUntil(this.OndestroySubs$)).subscribe(updateStudentData => {
       window.location.reload();
-=======
-      }).subscribe(updateStudentData => {
-      window.location.reload();
-      console.log("---d---",updateStudentData)
->>>>>>> master
+
     });
   }
   
@@ -170,12 +151,7 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
     
     this.service.createELEMENT_DATA({...this.formGroup1.value, ...this.formGroup2.value,
                                     ...this.formGroup3.value, ...this.formGroup4.value,
-<<<<<<< HEAD
                                     }).pipe(takeUntil(this.OndestroySubs$)).subscribe(submittingStudentData =>{
-=======
-                                    }).subscribe(submittingStudentData =>{
-                                      console.log('------',submittingStudentData)
->>>>>>> master
                                     })
                                     this.dialog.closeAll();
 

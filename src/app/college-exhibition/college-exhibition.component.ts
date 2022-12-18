@@ -21,11 +21,9 @@ export class CollegeExhibitionComponent implements OnInit{
   }
 
   submit(data:any){
-<<<<<<< HEAD
+
     return data
-=======
-    // console.log('--------------',data)
->>>>>>> master
+
   }
 }
 
