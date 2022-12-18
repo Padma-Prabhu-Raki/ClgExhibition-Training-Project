@@ -57,7 +57,7 @@
         <pre></pre>
             <button mat-stroked-button *ngIf="!data?.showEdit" class="btn_btn-primary" type="submit" (click)="snackbar()" [disabled]="formdata.invalid"> Submit </button>
             <button  mat-stroked-button *ngIf="data?.showEdit" class="btn_btn-primary" (click)="updatefn(formdata.value)" (click)="updatesnackbar()"> Update </button>
-            <button type="button"  style="margin-left:5px;"  (click)="cancel()" > Cancel </button>
+            <button type="button" class="cancel-btn" (click)="cancel()" > Cancel </button>
     </form>
 </div>                            /* done on 23-11-2022 */
 

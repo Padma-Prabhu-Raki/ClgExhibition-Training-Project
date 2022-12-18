@@ -7,6 +7,34 @@
 
 }
 
+.welcomestmt{
+    text-align: center; 
+    margin-top: 10px; 
+    font-size: 30px; 
+    font-weight: 400;
+}
+
+.eventstmt{
+    text-align: center; 
+    color:darkorchid; 
+    margin-top:10px; 
+    font-size: xx-large; 
+    font-style: oblique;
+}
+
+.cardtitle{
+    text-align:center;
+}
+
+.location{
+    margin-left:20px;
+}
+
+.cardtopic{
+    text-align: center; 
+    font-weight:300px;
+}
+
 .image{
     margin-top: 20px;
     margin-left: 50px;

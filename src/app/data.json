@@ -1,73 +1,73 @@
 {
   "clgExhibition": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Simran R K",
       "email": "srk@gmail.com",
       "mobile": 939327501,
-      "reg_no": "161",
+      "reg_no": 161,
       "dept": "ECE",
       "topic": "Software",
       "duration": 6,
       "wishness": true
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Miracline A",
       "email": "ma@gmail.com",
       "mobile": 32539251,
-      "reg_no": "456",
+      "reg_no": 456,
       "dept": "ECE",
       "topic": "Software",
       "duration": 7,
       "wishness": true
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Sindhuja",
       "email": "sr@gmail.com",
       "mobile": 512948561,
-      "reg_no": "41",
+      "reg_no": 41,
       "dept": "ECE",
       "topic": "Software",
       "duration": 8,
       "wishness": true
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Madhumitha P",
       "email": "mp@gmail.com",
       "mobile": 91465910461,
-      "reg_no": "21",
+      "reg_no": 21,
       "dept": "ECE",
       "topic": "Software",
       "duration": 8,
       "wishness": true
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Mahidhar Reddy",
       "email": "yr@gmail.com",
       "mobile": 9851256219,
-      "reg_no": "789",
+      "reg_no": 789,
       "dept": "ECE",
       "topic": "Software",
       "duration": 8,
       "wishness": true
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Melvin",
       "email": "ms@gmail.com",
       "mobile": 195862984,
-      "reg_no": "87",
+      "reg_no": 87,
       "dept": "Mech",
       "topic": "SAP",
       "duration": 10,
       "wishness": true
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Prathin",
       "email": "pp@gmail.com",
       "mobile": 2356235935,
@@ -78,7 +78,7 @@
       "wishness": true
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Padma Prabhu",
       "email": "pk@gmail.com",
       "mobile": 56249580414,
@@ -89,21 +89,21 @@
       "wishness": true
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Siva",
       "email": "sp@gmail.com",
       "mobile": 87253684368,
-      "reg_no": "42",
+      "reg_no": 42,
       "dept": "ECE",
       "topic": "Software",
       "duration": 10,
       "wishness": false
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Vishnu",
       "email": "vv@gmail.com",
-      "mobile": "5723957252",
+      "mobile": 5723957252,
       "dept": "ECE",
       "reg_no": 52,
       "topic": "Anchor",
@@ -111,10 +111,10 @@
       "wishness": false
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "RKP",
       "email": "adaD",
-      "mobile": "513451",
+      "mobile": 513451,
       "dept": "SDA",
       "reg_no": 29,
       "topic": "Software",
@@ -122,26 +122,36 @@
       "wishness": false
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Hello",
       "email": "xyz@gmail.com",
-      "mobile": "2656236236",
+      "mobile": 2656236236,
       "dept": "CSE",
       "reg_no": 22,
       "topic": "SAP",
       "duration": 8,
-      "wishness" : false
+      "wishness": false
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Kalishwaran",
       "email": "kw@muraai.com",
-      "mobile": "4715981457",
+      "mobile": 4715981457,
       "dept": "MCA",
       "reg_no": 7,
       "topic": "Group Dance",
       "duration": 8,
       "wishness": true
+    },
+    {
+      "id": 15,
+      "name": "Ramesh",
+      "email": "rm@gmail.com",
+      "mobile": "1251454151",
+      "dept": "Business",
+      "reg_no": 45,
+      "topic": "Vyapar",
+      "duration": 8
     }
   ],
   "cards": [
@@ -195,11 +205,11 @@
       "image": "https://miro.medium.com/max/500/1*Y0NjhuKAG_v8BniUqfcS6Q.jpeg"
     },
     {
-      "title" : " National Level Space Expo ",
-      "topic" : " Satellite Models, Engines, list of satellites launched by ISRO",
-      "domain" : "Space-Science",
-      "description" : "Conference on Historical Moments of Space Science and various Models of Space Vehicles and its Engines, \n Satellites launched by various nations \n Smart Preview of Future Missions by ISRO",
-      "image"  : "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/09/17/868490-space-exhibition.jpg"
+      "title": " National Level Space Expo ",
+      "topic": " Satellite Models, Engines, list of satellites launched by ISRO",
+      "domain": "Space-Science",
+      "description": "Conference on Historical Moments of Space Science and various Models of Space Vehicles and its Engines, \n Satellites launched by various nations \n Smart Preview of Future Missions by ISRO",
+      "image": "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/09/17/868490-space-exhibition.jpg"
     }
   ]
 }

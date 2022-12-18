@@ -6,6 +6,7 @@ export class Routerguard implements CanActivate{
         let checkingLogin = localStorage.getItem('loginSuccessful') ?? ''
         console.log(checkingLogin)
         // console.log(checkingLogin)
+        console.log(checkingLogin)
         return JSON.parse(checkingLogin)
         
         

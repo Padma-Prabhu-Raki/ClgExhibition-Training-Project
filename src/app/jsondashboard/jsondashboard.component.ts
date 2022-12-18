@@ -9,6 +9,7 @@ import { AddNewstudentComponent } from '../add-newstudent/add-newstudent.compone
 import { StepperSelectorComponent } from '../stepper-selector/stepper-selector.component';
 // import { MatTable } from '@angular/material/table';
 import { HeaderdashboardComponent } from '../headerdashboard/headerdashboard.component';
+import { clgExhibitionInterface } from '../model';
 
 @Component({
   selector: 'app-jsondashboard',
@@ -17,7 +18,7 @@ import { HeaderdashboardComponent } from '../headerdashboard/headerdashboard.com
 })
 export class JsondashboardComponent implements OnInit, OnDestroy{
   displayedColumns: string[] = ['id', 'name', 'email', 'mobile', 'reg_no', 'dept', 'topic', 'duration','menubar','wishness'];
-  dataSource : Observable<any>= of([{}])
+  dataSource : Observable<clgExhibitionInterface[]>= of([])
 
   deleteDataSubscription :any;
   editWishSubscription : any;
@@ -54,7 +55,7 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
     this.router.navigate(['/cards-exhibitions'])
   }
   
-  wishlist(data:any){
+  wishlist(data : any){
     this.route.navigate(['wishlist'])
   }
 
@@ -74,13 +75,13 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
     });
   }
 
-  deleteRow(id:any){
+  deleteRow(id:string){
     this.deleteDataSubscription = this.service.deleteELEMENT_DATA(id).subscribe(() => {
     })
     window.location.reload();
   }
   
-  funct(id:any){
+  funct(id:string){
     this.router.navigate(['/card-routing', id]);
   }
 

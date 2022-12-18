@@ -13,7 +13,6 @@ export class ToggleSidenavComponent {
     constructor(private dialog:MatDialog ,private router:ActivatedRoute, private route:Router){}
 
     sidenavhome(){
-
       this.route.navigate(['jsondashboard'])
     }
 }

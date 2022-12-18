@@ -13,7 +13,7 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./card-routing.component.css']
 })
 export class CardRoutingComponent implements OnInit,OnDestroy{
-  Studentdetails:any
+  Studentdetails: any;
   onDestroy$ = new Subject<boolean>
   
   constructor(private route:ActivatedRoute, private dialog:MatDialog, private service:SampleServiceService,

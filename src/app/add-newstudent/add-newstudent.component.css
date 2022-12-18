@@ -16,3 +16,7 @@ div.form-group{
     height:15px;
     /* background-color:aqua; */
 }
+
+.cancel-btn{
+    margin-left:5px;
+}

@@ -34,17 +34,4 @@ export class SampledashboardComponent{
   displayedColumns: string[] = ['id','email','first_name','last_name','avatar'];
   dataSource : any;
 
-  // constructor(private service:SampleServiceService) {}
-
-  // ngOnInit(): void {
-    
-  // }
-  // ngOnInit() {
-  //   this.service.getUsers().pipe(
-  //     map((val:any) => val.data),
-  //     // filter((data:any) => data.id == 7)
-  //   ).subscribe(data => {
-  //     this.dataSource=data
-  //   })
-  // }
 }

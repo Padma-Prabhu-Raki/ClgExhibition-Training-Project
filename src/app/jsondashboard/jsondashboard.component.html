@@ -1,54 +1,46 @@
-<!-- <app-headerdashboard></app-headerdashboard> -->
-<h1 style="margin-top: 20px; color:blueviolet; text-align:center;"> Participators Details </h1>
-<!-- <button mat-button style="margin-left:10px; border:1px dotted; border-color: blueviolet;" (click)="drawer.toggle()">
-  Menu 
-</button> -->
+<h1 class="head"> Participators Details </h1>
 <div class="dashboardarea">
-  <!-- <div> -->
-    <!-- <mat-drawer-container class="containerarea" autosize>
-      <mat-drawer #drawer class="sidebox2" move="side">
-          <button mat-button (click)="register()"> Registrations </button><br> 
-          <button mat-button (click)="events()"> Topics of Exhibitions </button><br>
-          <button mat-button (click)="wishlist(wishing)"> Interested </button><br>
-          <button mat-button (click)="logout()"> Logout </button>
-      </mat-drawer> -->
-    
-      <!-- </div> -->
-      <div></div>
-      <table style="text-align: center; margin-left:50px; margin-top:5px; border: 2px groove; width: 100%;" 
-              [dataSource]="dataSource | async" mat-table >
+      <table class="table" [dataSource]="dataSource" mat-table>
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> S.No.</th>
           <td mat-cell *matCellDef="let element">{{element.id}}</td>
         </ng-container>
+
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Name </th>
           <td mat-cell *matCellDef="let element">{{element.name}}</td>
         </ng-container>
+
         <ng-container matColumnDef="email">
           <th mat-header-cell *matHeaderCellDef> Email-ID </th>
           <td mat-cell *matCellDef="let element">{{element.email}}</td>
         </ng-container>
+
         <ng-container matColumnDef="mobile">
           <th mat-header-cell *matHeaderCellDef> Mobile </th>
           <td mat-cell *matCellDef="let element">{{element.mobile}}</td>
         </ng-container>
+
         <ng-container matColumnDef="reg_no">
           <th mat-header-cell *matHeaderCellDef> Reg. No. </th>
           <td mat-cell *matCellDef="let element">{{element.reg_no}}</td>
         </ng-container>
+
         <ng-container matColumnDef="dept">
           <th mat-header-cell *matHeaderCellDef> Dept. </th>
           <td mat-cell *matCellDef="let element">{{element.dept}}</td>
         </ng-container>
+
         <ng-container matColumnDef="topic">
           <th mat-header-cell *matHeaderCellDef> Topic of Execution </th>
           <td mat-cell *matCellDef="let element">{{element.topic}}</td>
         </ng-container>
+
         <ng-container matColumnDef="duration">
           <th mat-header-cell *matHeaderCellDef> Time Duration </th>
-          <td mat-cell *matCellDef="let element">{{element.duration}}</td>
+          <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
         </ng-container>
+
         <ng-container matColumnDef="menubar">
           <th mat-header-cell *matHeaderCellDef> &nbsp; </th>
           <td mat-cell *matCellDef="let element">
@@ -72,12 +64,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-        
-
       </table>
-    <!-- </mat-drawer-container> -->
-  <!-- </div> -->
-
 </div>
 
 <mat-paginator [length]="100"
@@ -85,5 +72,3 @@
   [pageSizeOptions]="[5, 10, 25, 100]"
   aria-label="Select page">
 </mat-paginator>
-<!-- (click)="funct(id)" -->
-<!-- (click)="funct(row.id)" -->

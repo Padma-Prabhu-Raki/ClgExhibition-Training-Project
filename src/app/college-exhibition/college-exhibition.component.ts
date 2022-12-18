@@ -21,9 +21,7 @@ export class CollegeExhibitionComponent implements OnInit{
   }
 
   submit(data:any){
-
     return data
-
   }
 }
 

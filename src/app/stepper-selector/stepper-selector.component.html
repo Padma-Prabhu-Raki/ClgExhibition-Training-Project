@@ -39,7 +39,6 @@
             <div>
                 <button mat-button matStepperPrevious> Back </button>
                 <button mat-button matStepperNext> Next </button>
-                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
             </div>
         </form>
     </mat-step>
@@ -61,7 +60,6 @@
             <div>
                 <button mat-button matStepperPrevious> Back </button>
                 <button mat-button matStepperNext> Next </button>
-                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
             </div>
         </form>
     </mat-step>
@@ -80,7 +78,6 @@
             <div>
                 <button mat-button matStepperPrevious> Back </button>
                 <button mat-button matStepperNext> Next </button>
-                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
             </div>
         </form>
     </mat-step>
@@ -100,7 +97,6 @@
             <div>
                 <button mat-button matStepperPrevious> Back </button>
                 <button mat-button matStepperNext> Next </button>
-                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
             </div>
         </form>
     </mat-step>
@@ -140,7 +136,6 @@
                 <mat-label> State: </mat-label>
                 <div class="form-group">
                     <mat-select class="form-control" [formControl]="state" name="state">
-                        <!-- <option value=""> Select state ... </option> -->
                         <mat-option *ngFor="let state of states" [value]="state">
                             {{ state.name }}
                         </mat-option>
@@ -159,46 +154,19 @@
             <button mat-stroked-button class="btn" (click)="state.reset()"> Clear </button>
             <p></p><br>
 
-            <!-- <mat-form-field appearance="fill">
-                 <mat-label> City </mat-label>
-                <div class="form-group">
-                    <mat-select name="city" formControlName="city" class="form-control">
-                         <option value=""> Select city ... </option> 
-
-                        <mat-option *ngFor="let city of City" [value]="city">
-                            {{ city.name }}
-                        </mat-option>
-                    </mat-select>
-                </div>    
-                <mat-error *ngIf="city.hasError('required')"> Please select a city. </mat-error>
-            </mat-form-field>
-            <button mat-stroked-button class="btn" (click)="city.reset()"> Clear </button> -->
-
-            <!-- <label for="city"> City: </label><br /><br />
-            <mat-select *ngIf="cities" #city name="city" id="city"
-                (change)="onCityChange($event)" >
-                <mat-option [value]="null">-- Select Your City --</mat-option>
-                <mat-option *ngFor="let cityname of cities" [value]="cityname | json">
-                    {{ city.name }}
-                </mat-option>
-            </mat-select> -->
-
             <div>
                 <button mat-button matStepperPrevious> Back </button>
                 <button mat-button matStepperNext> Next </button>
-                <!-- <button mat-button style="margin-left:5px;" type="submit"> Submit </button> -->
             </div>
         </form>
     </mat-step>
     <mat-step [stepControl]="formGroup7" label="Select your Gender">
         <form [formGroup]="formGroup7" (ngSubmit)="form7()" #formseven="ngForm">
-            <!-- <mat-form-field appearance="fill" name="gender"> -->
             <mat-label> Select your Gender: </mat-label><br>
             <mat-radio-group>
                 <mat-radio-button class="malebutton" value="1"> MALE </mat-radio-button>
                 <mat-radio-button class="femaleradio" value="2"> FEMALE </mat-radio-button>
             </mat-radio-group>
-            <!-- </mat-form-field> -->
             <div>
                 <button mat-button matStepperPrevious> Back </button>
                 <button mat-button matStepperNext> Next </button>
@@ -212,18 +180,7 @@
         <p> You are now completed your registration process with above details. </p>
         <div>
             <button mat-button matStepperPrevious> Back </button>
-            <button mat-button style="margin-left:5px;" (click)="stepper.reset()"> Reset </button>
-            <!--<button (click)="formone.ngSubmit.emit(); formtwo.ngSubmit.emit(); formthree.ngSubmit.emit();
-                formfour.ngSubmit.emit(); formfive.ngSubmit.emit(); formfive.ngSubmit.emit();
-                formsix.ngSubmit.emit(); formseven.ngSubmit.emit();" 
-                mat-stroked-button  style="margin-left:5px;" *ngIf="!data?.showEdit" 
-                class="btn_btn-primary" (click)="snackbar()" 
-                > Submit </button>
-            <button  mat-stroked-button  style="margin-left:5px;" *ngIf="data?.showEdit" 
-                     ngIfclass="btn_btn-primary" (click)="updatefn(formGroup7.value)" 
-                    (click)="updatesnackbar()"> Update 
-            </button>
-             <button style="margin-left:5px;"  *ngIf="data?.showcancel" (click)="cancel()" > Cancel </button> -->
+            <button mat-button class="reset-btn" (click)="stepper.reset()"> Reset </button>
         </div>
     </mat-step>
 </mat-stepper>

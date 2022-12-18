@@ -32,7 +32,7 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
       state : this.state
     })
 
-    this.country.valueChanges.subscribe((countryName:any) => {
+    this.country.valueChanges.pipe(takeUntil(this.OndestroySubs$)).subscribe((countryName:any) => {
       this.states = State.getStatesOfCountry(countryName.isoCode)
 
     })
@@ -101,8 +101,8 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
       ...this.formGroup3.value, ...this.formGroup4.value,
       }).pipe(takeUntil(this.OndestroySubs$)).subscribe(updateStudentData => {
       window.location.reload();
-
     });
+    this.dialog.closeAll();
   }
   
   cancel(){
@@ -120,7 +120,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
   opensnackbar(){
     this._snackBar.open('Thanks for Visting our Page')
   }
-
 
   form1(){
     this.formGroup1.value;
