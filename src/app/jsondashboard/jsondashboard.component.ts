@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject} from '@angular/core';
+import { Component, OnInit, OnDestroy,Inject} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Data } from '@angular/router';
 import { filter, map, Observable, of, windowWhen } from 'rxjs';
@@ -15,9 +15,12 @@ import { HeaderdashboardComponent } from '../headerdashboard/headerdashboard.com
   templateUrl: './jsondashboard.component.html',
   styleUrls: ['./jsondashboard.component.css']
 })
-export class JsondashboardComponent implements OnInit{
+export class JsondashboardComponent implements OnInit, OnDestroy{
   displayedColumns: string[] = ['id', 'name', 'email', 'mobile', 'reg_no', 'dept', 'topic', 'duration','menubar','wishness'];
   dataSource : Observable<any>= of([{}])
+
+  deleteDataSubscription :any;
+  editWishSubscription : any;
   
   wishing:any;
 
@@ -25,23 +28,20 @@ export class JsondashboardComponent implements OnInit{
                 public dialog:MatDialog, private route: Router) {}
 
   ngOnInit(){
-
-    // console.log('---url---',this.route.url)
     this.service.getELEMENT_DATA()
-    // this.service.getStudents()
     if(this.route.url.includes('jsondashboard')) {
-      this.dataSource = this.service.dataEvent$
+      this.dataSource = this.service.dataEvent$ 
     }
     else {
-      this.dataSource = this.service.dataEvent$.pipe(map((data:any) => {
-        // console.log('----',data)
-  
-        return (data.filter((wish:any) => wish.wishness))
+      this.dataSource = this.service.dataEvent$.pipe(map((interestedData:any) => {
+        return (interestedData.filter((wish:any) => wish.wishness))
       }))
     }
+  }
 
-    // this.dataStudent = this.service.dataEvent$
-    // this.wishing = this.service.getELEMENT_DATA().pipe(filter((n:any) => n.wishness === true))
+  ngOnDestroy(){
+    this.deleteDataSubscription?.unsubscribe();
+    this.editWishSubscription?.unsubscribe();
   }
 
   register(){
@@ -55,38 +55,15 @@ export class JsondashboardComponent implements OnInit{
   }
   
   wishlist(data:any){
-    // this.dataSource.pipe(filter((wish) => wish.wishness === true)) 
     this.route.navigate(['wishlist'])
-    // this.dataSource = this.service.getELEMENT_DATA().pipe(map((n:any) => {
-    //   console.log('----',n)
-
-    //   return (n.filter((wish:any) => wish.wishness))
-    // }))
   }
 
   logout(){
-    // localStorage.clear()
     localStorage.setItem('loginSuccessful','false')
-    // console.log(localStorage.)
     this.router.navigate(['/'])
   }
 
   editRow(ele:any){
-    // this.service.createELEMENT_DATA({
-    //   id:1,
-    //   name: "Simran",
-    //   reg_no: 123,
-    //   dept: "CSE",
-    //   topic: "Software",
-    //   duration : 6
-    //     }).subscribe(d => {
-    //   console.log("----------------------", d)
-    // })
-
-    // this.service.editELEMENT_DATA({}).subscribe(d => {
-    //   console.log('----------',d)
-    // })
-    // this.router.navigate(['add-newstudent',id]);
     this.dialog.open(StepperSelectorComponent,{
       data: {
         ...ele,
@@ -95,14 +72,10 @@ export class JsondashboardComponent implements OnInit{
       },
       disableClose: true
     });
-
-    // window.location.reload();
   }
 
   deleteRow(id:any){
-    // console.log('---ele====', element)
-    this.service.deleteELEMENT_DATA(id).subscribe(deleteData => {
-      // console.log('------', deleteData)
+    this.deleteDataSubscription = this.service.deleteELEMENT_DATA(id).subscribe(() => {
     })
     window.location.reload();
   }
@@ -113,10 +86,8 @@ export class JsondashboardComponent implements OnInit{
 
 
   editfav(element:any){
-    this.service.updatewish(element).subscribe(editwish => {
+    this.editWishSubscription = this.service.updatewish(element).subscribe(() => {
       window.location.reload();
-      // console.log('--d: --', editwish)
-      
     })
   }
 }

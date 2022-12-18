@@ -27,22 +27,19 @@ export class LoginpageComponent{
     })
   }
 
-  // home(){
-  //   this.router.navigate(['jsondashboard/'])
-  // }
-
   login(data:any){
+<<<<<<< HEAD
+    this.service.loginpageurl(data).subscribe(loginData => {
+=======
     // console.log('----',data)
     this.service.loginpageurl(data).subscribe(loginData => {
       // console.log('-----',loginData)
       // console.log('--------',(data['email']).split('@'))
+>>>>>>> master
       localStorage.setItem('loginSuccessful','true') 
       localStorage.setItem('email',(data.email))
-      // console.log(localStorage.getItem('loginSuccessful'))
 
       this.router.navigate(['/jsondashboard'])});
-
-      // this._snackBar.open('Login has been Done, Thank you for your Interest');
     }
   }
 

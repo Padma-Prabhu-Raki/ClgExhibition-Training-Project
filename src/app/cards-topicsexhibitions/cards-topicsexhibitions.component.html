@@ -6,7 +6,8 @@
     </h1><br>  -->
 <!-- </head><br> -->
 <div class="row row-cols-1  row-cols-md-3">
-    <div class="col-mb-4"   *ngFor="let card of cardDetails">
+    <div class="col-mb-4"   *ngFor="let card of cardDetails | async">
+        <h1 style="text-align: center; color:darkorchid; margin-top:10px; font-size: xx-large; font-style: oblique;"> Events Related to {{card.domain}} </h1>
         <mat-card class="card">
             <mat-card-header class="header">
                 <mat-card-title style="text-align:center;"> {{card.title}} </mat-card-title>

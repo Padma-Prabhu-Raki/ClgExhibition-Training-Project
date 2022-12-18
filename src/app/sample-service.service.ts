@@ -75,7 +75,7 @@ export class SampleServiceService {
     return this.http.post(`${this.login_URL}`, data) 
   }
 
-  getCardTitle(){
+  getCardDetails(){
     return this.http.get(`${this.API_URL2}`)
   }
 

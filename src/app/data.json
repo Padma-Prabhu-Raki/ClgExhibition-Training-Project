@@ -122,6 +122,17 @@
       "wishness": false
     },
     {
+      "id": 13,
+      "name": "Hello",
+      "email": "xyz@gmail.com",
+      "mobile": "2656236236",
+      "dept": "CSE",
+      "reg_no": 22,
+      "topic": "SAP",
+      "duration": 8,
+      "wishness" : false
+    },
+    {
       "id": 14,
       "name": "Kalishwaran",
       "email": "kw@muraai.com",
@@ -131,16 +142,6 @@
       "topic": "Group Dance",
       "duration": 8,
       "wishness": true
-    },
-    {
-      "id": 13,
-      "name": "Hello",
-      "email": "xyz@gmail.com",
-      "mobile": "2656236236",
-      "dept": "CSE",
-      "reg_no": 22,
-      "topic": "SAP",
-      "duration": 8
     }
   ],
   "cards": [
@@ -152,17 +153,17 @@
       "image": "https://cdn5.f-cdn.com/contestentries/1145423/26732064/59d068685ff95_thumb900.jpg"
     },
     {
-      "title": "Technical Exhibition",
-      "topic": "Project Presentation",
-      "domain": "Presentation",
-      "description": "Lets have a chance to be a good presentator and good inventor.",
-      "image": "https://previews.123rf.com/images/wowomnom/wowomnom1802/wowomnom180200008/95612499-creative-process-concept-a4-page-for-web-poster-presentation-vector-creative-bright-illustration-of-.jpg"
+      "title": " First National Exhibition on General Ethics and Life Science ",
+      "topic": "Explore Knowledge on Society",
+      "domain": "Political Science",
+      "description": " Have a look at on General Science like various laws of Indian Constituition and other Nations, Amazing Facts and more stalls for ethics of Human Life Science",
+      "image": "https://thumbs.dreamstime.com/b/life-science-concept-wooden-blocks-table-personal-development-education-motivation-concept-blurred-background-135672319.jpg"
     },
     {
       "title": "National Level Technical Symposium",
-      "topic": "Technical Quiz and Paper Presentation",
+      "topic": "Technical Quiz, Paper Presentation and Project Presentation",
       "domain": "Software",
-      "description": "i) MCQs on algorithms and brain-analytic quizzes on basics of Programming languages. \n ii) Presentation is welcomed from aspirants having knowledge on latest Technologies. ",
+      "description": "i) MCQs on algorithms and brain-analytic quizzes on basics of Programming languages. \n ii) Presentation is welcomed from aspirants having knowledge on latest Technologies. \n iii) Have a great chnace to explore your knowledge and to be a inventor.",
       "image": "https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-recruiting-the-strongest-brain-recruitment-poster-image_189760.jpg"
     },
     {
@@ -175,16 +176,30 @@
     {
       "title": "Technical Workshop & Conference on Software Defined Networking(SDN)",
       "topic": "AutoCAD and MATLAB",
-      "domain": "cORE",
+      "domain": "Conference",
       "description": "Workshop on Creative design of circuit related things and advanced machinaries design using AutoCAD & MATLAB.' + '\n' + 'Conference conducted by experienced Instrialists people detailed report on advanced Mobile Networks and Get a clear knowledge on basics, working of SDN and its impact in future.",
       "image": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/112825156/original/d1e86b9a45d5fba30d0382f07f67c3d61b6cde6d/do-your-matlab-and-autocad-projects.jpg"
     },
     {
+      "title": " World Political Science Exhibition",
+      "topic": " Books, Journals, Biographies of Various Leaders",
+      "domain": "Political Science",
+      "description": " History of World Political Science and Reformation of Modern Politics.. \n Biographies and Life Histories of various Leaders who sacrifice their life for Welfare of People",
+      "image": "https://www.shutterstock.com/image-illustration/political-science-word-cloud-concept-260nw-230088805.jpg"
+    },
+    {
       "title": "Non-Technical(Cultural) Event",
       "topic": "Cultural Events",
-      "domain": "Software/Industrialists",
+      "domain": "Non-academic",
       "description": "All cultural events like Singing, Dance, MIME etc., and non-cultural events like ShortFilm Making, Photography Contest etc.,",
       "image": "https://miro.medium.com/max/500/1*Y0NjhuKAG_v8BniUqfcS6Q.jpeg"
+    },
+    {
+      "title" : " National Level Space Expo ",
+      "topic" : " Satellite Models, Engines, list of satellites launched by ISRO",
+      "domain" : "Space-Science",
+      "description" : "Conference on Historical Moments of Space Science and various Models of Space Vehicles and its Engines, \n Satellites launched by various nations \n Smart Preview of Future Missions by ISRO",
+      "image"  : "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/09/17/868490-space-exhibition.jpg"
     }
   ]
 }

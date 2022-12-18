@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CollegeExhibitionComponent } from './college-exhibition/college-exhibition.component';
 import { JsondashboardComponent } from './jsondashboard/jsondashboard.component';
@@ -26,11 +26,41 @@ const routes: Routes = [
   {path:'jsondashboard', canActivate:[Routerguard] , component:JsondashboardComponent},
   {path:'add-newstudent', component:AddNewstudentComponent},
   {path:'compinteractdetails', component:CompinteractdetailsComponent},
-  {path:'cards-exhibitions',  canActivate:[Routerguard] , component:CardsTopicsexhibitionsComponent},
-  {path: 'wishlist',  canActivate:[Routerguard] , component: JsondashboardComponent}
-  // {path:'add-newstudent/:id', component:AddNewstudentComponent},
-  // {path:'card-routing/:id', component:CardRoutingComponent},
-  // {path:'editdashboard/:id', component:EditdashboardComponent},
+  {path: 'wishlist',  canActivate:[Routerguard] , component: JsondashboardComponent},
+  {path:'cards-exhibitions',  canActivate:[Routerguard], component:CardsTopicsexhibitionsComponent, 
+    children: [
+      {
+        path :'Conference',
+        canActivate : [Routerguard],
+        component : CardsTopicsexhibitionsComponent
+      },
+      {
+        path : 'Hardware',
+        canActivate : [Routerguard],
+        component : CardsTopicsexhibitionsComponent
+      },
+      {
+        path : 'General-and-Political-Science',
+        canActivate : [Routerguard],
+        component : CardsTopicsexhibitionsComponent
+      },
+      {
+        path : 'Software',
+        canActivate : [Routerguard],
+        component : CardsTopicsexhibitionsComponent
+      },
+      {
+        path : 'Non-academic',
+        canActivate : [Routerguard],
+        component : CardsTopicsexhibitionsComponent
+      },
+      {
+        path : 'Space-Science',
+        canActivate : [Routerguard],
+        component : CardsTopicsexhibitionsComponent
+      },
+    ]
+  },  
 ];
 
 @NgModule({
