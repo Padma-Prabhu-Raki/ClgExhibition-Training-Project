@@ -38,7 +38,6 @@ export class HeaderdashboardComponent implements OnInit{
   
   wishlist(){
     this.route.navigate(['/wishlist'])
-
   }
 
   logout(){

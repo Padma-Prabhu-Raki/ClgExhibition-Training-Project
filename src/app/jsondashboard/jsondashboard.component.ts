@@ -29,7 +29,6 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
                 public dialog:MatDialog, private route: Router) {}
 
   ngOnInit(){
-
     this.service.getELEMENT_DATA()
     if(this.route.url.includes('jsondashboard')) {
       this.dataSource = this.service.dataEvent$ 
@@ -39,7 +38,6 @@ export class JsondashboardComponent implements OnInit, OnDestroy{
         return (interestedData.filter((wish:any) => wish.wishness))
       }))
     }
-
   }
 
   ngOnDestroy(){

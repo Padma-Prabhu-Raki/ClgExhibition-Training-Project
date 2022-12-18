@@ -10,7 +10,6 @@ import { Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'app-card-routing',
   templateUrl: './card-routing.component.html',
-  // template: `<app-compinteractdetails [childMessage]="parentMessage"></app-compinteractdetails>`,
   styleUrls: ['./card-routing.component.css']
 })
 export class CardRoutingComponent implements OnInit,OnDestroy{

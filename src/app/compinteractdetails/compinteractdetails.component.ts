@@ -4,7 +4,6 @@ import { SampleServiceService } from '../sample-service.service';
 @Component({
   selector: 'app-compinteractdetails',
   templateUrl: './compinteractdetails.component.html',
-  // template : ` This is the message from the parent {{message}}`,
   styleUrls: ['./compinteractdetails.component.css']
 })
 export class CompinteractdetailsComponent implements OnInit{

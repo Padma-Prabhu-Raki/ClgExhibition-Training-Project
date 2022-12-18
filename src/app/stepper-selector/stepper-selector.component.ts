@@ -16,7 +16,6 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./stepper-selector.component.css']
 })
 export class StepperSelectorComponent implements OnDestroy,OnInit{
-  // countries : any
   states:any
 
   OndestroySubs$ =new Subject<boolean>
@@ -82,10 +81,6 @@ export class StepperSelectorComponent implements OnDestroy,OnInit{
   state = new FormControl(null, Validators.required)
 
   countries:any
-    
-  // this.service.getCountries().subscribe{
-  //   data => this.countries = data
-  // };
 
   formGroup7 = this._formBuilder.group(
     { gender: [this.data?.gender ?? '', Validators.required],}

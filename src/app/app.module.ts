@@ -37,8 +37,8 @@ import { Routerguard } from './routerguard';
 import { CardsTopicsexhibitionsComponent } from './cards-topicsexhibitions/cards-topicsexhibitions.component';
 import {MatListModule} from '@angular/material/list';
 import { SampleDirective } from './sample.directive';
-import { StoreModule } from '@ngrx/store';
 import {MatExpansionModule} from '@angular/material/expansion'
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -79,8 +79,8 @@ import {MatExpansionModule} from '@angular/material/expansion'
     MatRadioModule,
     MatPaginatorModule,
     MatListModule,
-    StoreModule.forRoot({}, {}),
-    MatExpansionModule
+    MatExpansionModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     Routerguard,
