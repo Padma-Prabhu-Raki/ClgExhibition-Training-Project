@@ -97,7 +97,7 @@
       "dept": "ECE",
       "topic": "Software",
       "duration": 10,
-      "wishness": false
+      "wishness": true
     },
     {
       "id": "11",
